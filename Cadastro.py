@@ -1,8 +1,10 @@
 import os
 from flask import Flask, render_template, request
 from flaskext.mysql import MySQL
+from Entities import Objeto
 
 mysql = MySQL()
+objetoPesquisa = Objeto()
 app = Flask(__name__)
 
 # MySQL configurations
@@ -18,6 +20,16 @@ def main():
 
 @app.route('/cadastro', methods=['POST', 'GET'])
 def cadastrar():
+    nomeEmpresa = request.form['nomeEmpresa']
+    cnpj = request.form['cnpj']
+    objetoPesquisa = request.form['objetoPesquisa']
+    tipoObjeto = request.form['tipoObjeto']
+    horapesquisa = request.form['horapesquisa']
+    idade = request.form['idade']
+    classeEconomica = request.form['classeEconomica']
+
+    objetoPesquisa.insert(nomeEmpresa, cnpj, objetoPesquisa, tipoObjeto, horapesquisa, idade, classeEconomica)
+    
     return render_template('cadastro_pesquisa.html')
 
 # @app.route('/gravar', methods=['POST','GET'])
