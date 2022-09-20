@@ -1,8 +1,16 @@
 import os
-from flask import Flask, request, abort , render_template
+from flask import Flask, render_template, request
+from flaskext.mysql import MySQL
 
-
+mysql = MySQL()
 app = Flask(__name__)
+
+# MySQL configurations
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'impactados'
+app.config['MYSQL_DATABASE_DB'] = 'pesquisa'
+app.config['MYSQL_DATABASE_HOST'] = ''
+mysql.init_app(app)
 
 @app.route('/')
 def main():
@@ -12,7 +20,18 @@ def main():
 def cadastrar():
     return render_template('cadastro_pesquisa.html')
 
+# @app.route('/gravar', methods=['POST','GET'])
+# def gravar():
+#   nome = request.form['nome']
+#   cpf = request.form['cpf']
+#   endereco = request.form['endereco']
+#   if nome and email and senha:
+#     conn = mysql.connect()
+#     cursor = conn.cursor()
+#     cursor.execute('insert into tbl_user (user_name, user_cpf, user_endereco) VALUES (%s, %s, %s)', (nome, cpf, endereco))
+#     conn.commit()
+#   return render_template('mvc.html')
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5002))
+    port = int(os.environ.get("PORT", 8888))
     app.run(host='0.0.0.0', port=port)
