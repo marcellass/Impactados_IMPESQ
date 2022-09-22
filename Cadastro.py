@@ -17,28 +17,22 @@ mysql.init_app(app)
 def main():
     return render_template('cadastro_pesquisa.html')
 
-@app.route('/cadastro', methods=['POST', 'GET'])
+@app.route('/cadastrar', methods=['POST', 'GET'])
 def cadastrar():
     nomeEmpresa = request.form['nomeEmpresa']
     cnpj = request.form['cnpj']
     objetoPesquisa = request.form['objetoPesquisa']
     tipoObjeto = request.form['tipoObjeto']
     horapesquisa = request.form['horapesquisa']
-    faixaEtaria = request.form['idade']
+    faixaEtaria = request.form['faixaEtaria']
     classeEconomica = request.form['classeEconomica']
-
     ObjetoPesquisaEntity.insert(nomeEmpresa, cnpj, objetoPesquisa, tipoObjeto, horapesquisa, faixaEtaria, classeEconomica)
-    
     return render_template('cadastro_pesquisa.html')
 
 @app.route('/listar', methods=['POST','GET'])
 def listar():
-  conn = mysql.connect()
-  cursor = conn.cursor()
-  cursor.execute('select user_name, user_cpf, user_endereco from tbl_user')
-  data = cursor.fetchall()
-  conn.commit()
-  return render_template('listar.html', datas=data)
+  data = ObjetoPesquisaEntity.read
+  return render_template('listar_pesquisa.html', datas=data)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8888))

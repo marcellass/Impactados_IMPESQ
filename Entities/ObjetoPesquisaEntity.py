@@ -8,8 +8,14 @@ def insert(nomeEmpresa, cnpj, objetoPesquisa, tipoObjeto, horapesquisa, faixaEta
     if nomeEmpresa and cnpj and objetoPesquisa and tipoObjeto and horapesquisa and faixaEtaria and classeEconomica:
         conn = mysql.connect()
         cursor = conn.cursor()
-        cursor.execute('insert into tbl_objeto_pesquisa (empresa_nome, empresa_cnpj, empresa_objeto_pesquisa, empresa_tipo_objeto, empresa_hora_pesquisa, empresa_faixa_etaria, empresa_faixa_etaria) VALUES (%s, %s, %s)', (nome, cpf, endereco))
+        cursor.execute('insert into tbl_objeto_pesquisa (empresa_nome, cnpj, objeto_pesquisa, tipo_objeto, hora_pesquisa, faixa_etaria, faixa_etaria) VALUES (%s, %s, %s, %s, %s, %s, %s)', (nomeEmpresa, cnpj, objetoPesquisa, tipoObjeto, horapesquisa, faixaEtaria, classeEconomica))
         conn.commit()
 
 def read():
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute('select empresa_nome, cnpj, objeto_pesquisa, tipo_objeto, hora_pesquisa, faixa_etaria, faixa_etaria from tbl_objeto_pesquisa')
+    data = cursor.fetchall()
+    conn.commit()
+    return data
     
