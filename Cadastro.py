@@ -1,7 +1,6 @@
 import os
 from flask import Flask, render_template, request
 from flaskext.mysql import MySQL
-from Entities import ObjetoPesquisaEntity
 
 mysql = MySQL()
 app = Flask(__name__)
@@ -23,17 +22,28 @@ def cadastrar():
     cnpj = request.form['cnpj']
     objetoPesquisa = request.form['objetoPesquisa']
     tipoObjeto = request.form['tipoObjeto']
-    horapesquisa = request.form['horapesquisa']
+    horapesquisa = str(request.form['horapesquisa'])
     faixaEtaria = request.form['faixaEtaria']
     classeEconomica = request.form['classeEconomica']
-    ObjetoPesquisaEntity.insert(nomeEmpresa, cnpj, objetoPesquisa, tipoObjeto, horapesquisa, faixaEtaria, classeEconomica)
+
+    if nomeEmpresa and cnpj and objetoPesquisa and tipoObjeto and horapesquisa and faixaEtaria and classeEconomica:
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        cursor.execute('insert into tbl_objeto_pesquisa (empresa_nome, cnpj, objeto_pesquisa, tipo_objeto, hora_pesquisa, faixa_etaria, faixa_etaria) VALUES (%s, %s, %s, %s, %s, %s, %s)', (nomeEmpresa, cnpj, objetoPesquisa, tipoObjeto, horapesquisa, faixaEtaria, classeEconomica))
+        conn.commit()  
+
     return render_template('cadastro_pesquisa.html')
 
 @app.route('/listar', methods=['POST','GET'])
 def listar():
-  data = ObjetoPesquisaEntity.read
-  return render_template('listar_pesquisa.html', datas=data)
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute('select empresa_nome, cnpj, objeto_pesquisa, tipo_objeto, hora_pesquisa, faixa_etaria, faixa_etaria from tbl_objeto_pesquisa')
+    data = cursor.fetchall()
+    conn.commit()
+    return render_template('listar_pesquisa.html', datas=data)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8888))
+    port = int(os.environ.get("PORT", 8885))
     app.run(host='0.0.0.0', port=port)
+
