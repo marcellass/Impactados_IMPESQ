@@ -1,76 +1,129 @@
 <html>
-    <body>
-        <h1> Cadastro da Pesquisa</h1>
-        <form action="/cadastrar" method="POST" name="cadastrar">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      </head>
 
-            <div>
-                <label>Nome da empresa:</label><br>
-                <input type="text"  name="nomeEmpresa"><br>
-            </div>
+    <form action="/cadastrar" method="POST" name="cadastrar">
+        <div class="form-group">
+          <label> Nome da empresa:</label>
+          <input type="text" class="form-control" name="nomeEmpresa" placeholder="Nome da empresa">
+        </div></br>
 
-            <div>
-                <label>CNPJ/CPF:</label><br>
-                <input type="text" name="cnpj"><br>
-            </div>
+        <div class="form-group">
+          <label> CNPJ/CPF:</label>
+          <input type="text" class="form-control" name="cnpj" placeholder="CNPJ/CPF">
+        </div></br>
 
-            <div>
-                <label>Objeto da pesquisa:</label><br>
-                <input type="text" name="objetoPesquisa"><br>
-            </div>
+        <div class="form-group">
+            <label> Objeto da pesquisa:</label>
+            <input type="text" class="form-control" name="objetoPesquisa" placeholder="Objeto da pesquisa">
+          </div></br>
 
-            <div>
-                <p>Tipo de objeto:<p>
-                    <input type="radio" name="tipoObjeto" value="Produto">
-                    <label for="age1">Produto</label>
-                    <input type="radio" name="tipoObjeto" value="Servico">
-                    <label for="age1">Serviço</label>
-                    <br><br>  
-            </div>
+          <div>
+            <label> Tipo de objeto:</label>
+          </div>
+          
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoObjeto" value="Produto">
+            <label class="form-check-label" for="flexRadioDefault1">
+            Produto </label>
+          </div>
 
-            <div>
-                <label>Data e hora da pesquisa:</label><br>
-                <input type="datetime-local" name="horapesquisa">
-                <br>
-            </div>
+          <div>
+            <input class="form-check-input" type="radio" name="tipoObjeto" value="Produto">
+            <label class="form-check-label" for="flexRadioDefault1">
+            Serviço </label>
+          </div></br>
 
-            <div>
-                <p>Gênero dos convidados:<p>
-                    <input type="checkbox" name="genero" value="Homem">
-                    <label for="gen1"> Homem</label>
-                    <input type="checkbox" name="genero" value="Mulher">
-                    <label for="gen2"> Mulher</label>
-                    <input type="checkbox" name="genero" value="Outros">
-                    <label for="gen3"> Outros</label><br>
-            </div>
+          <div>
+            <label>Data e hora da pesquisa:</label>
+            <input type="datetime-local" name="horapesquisa" class="form-control">
+          </div></br>
 
-            <div>
-                <p>Faixa estária dos convidados:<p>
-                    <input type="radio" name="faixaEtaria" value="0 - 18">
-                    <label for="age1">0 - 18</label><br>
-                    <input type="radio" name="faixaEtaria" value="18 - 35">
-                    <label for="age2">18 - 35</label><br>
-                    <input type="radio" name="faixaEtaria" value="35 - 70">
-                    <label for="age3">35 - 70</label><br>
-            </div>
-            
-           <div>
-            <p>Classificação socio-econômica:<p>
-                <input type="checkbox" name="classeEconomica" value="A">
-                <label for="a">A</label><br>
-                <input type="checkbox" name="classeEconomica" value="B">
-                <label for="b">B</label><br>  
-                <input type="checkbox" name="classeEconomica" value="C">
-                <label for="c">C</label><br>
-                <input type="checkbox" id="d" name="classeEconomica" value="D">
-                <label for="d">D</label><br>
-                <input type="checkbox" name="classeEconomica" value="E">
-                <label for="e">E</label><br><br>  
-           </div>
+          <div>
+            <label>Gênero dos convidados:<label></label>
+          </div>
 
-           <div>
-                <button type="submit">Cadastrar</button>
-           </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="genero">
+            <label class="form-check-label" for="flexRadioDefault1">
+            Homem </label>
+          </div>
 
-        </form>
-    </body>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="genero">
+            <label class="form-check-label" for="flexRadioDefault2">
+            Mulher </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="genero">
+            <label class="form-check-label" for="flexRadioDefault2">
+            Outros </label>
+          </div></br>
+
+          <div>
+            <label>Faixa estária dos convidados:<label></label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="faixaEtaria" value="0 - 18">
+            <label class="form-check-label" for="flexRadioDefault1">
+            0 - 18 </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="faixaEtaria" value="18 - 35">
+            <label class="form-check-label" for="flexRadioDefault2">
+            18 - 35 </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="faixaEtaria" value="35 - 70">
+            <label class="form-check-label" for="flexRadioDefault2">
+            35 - 70 </label>
+          </div></br>
+
+          <div>
+            <label>Classificação socio-econômica</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="classeEconomica" value="A">
+            <label class="form-check-label" for="flexRadioDefault2">
+            A</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="classeEconomica" value="B">
+            <label class="form-check-label" for="flexRadioDefault2">
+            B</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="classeEconomica" value="C">
+            <label class="form-check-label" for="flexRadioDefault2">
+            C</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="classeEconomica" value="D">
+            <label class="form-check-label" for="flexRadioDefault2">
+            D</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="classeEconomica" value="E">
+            <label class="form-check-label" for="flexRadioDefault2">
+            E</label>
+          </div></br>
+
+
+
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
 </html>
