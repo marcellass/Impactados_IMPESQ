@@ -25,7 +25,7 @@ def cadastrar():
     horapesquisa = str(request.form['horapesquisa'])
     genero = request.form['genero']
     faixaEtaria = request.form['faixaEtaria']
-    classeEconomica = request.form['classeEconomica']
+    classeEconomica = request.form.getlist(('classeEconomica'))
     if nomeEmpresa and cnpj and objetoPesquisa and tipoObjeto and horapesquisa and genero and faixaEtaria and classeEconomica:
         conn = mysql.connect()
         cursor = conn.cursor()
@@ -46,4 +46,6 @@ def listar():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8888))
     app.run(host='0.0.0.0', port=port)
+
+
 
