@@ -23,9 +23,11 @@ def cadastrar():
     objetoPesquisa = request.form['objetoPesquisa']
     tipoObjeto = request.form['tipoObjeto']
     horapesquisa = str(request.form['horapesquisa'])
-    genero = request.form['genero']
+    genero2 = request.form.getlist('genero')
+    genero =' '.join(map(str,genero2))
     faixaEtaria = request.form['faixaEtaria']
-    classeEconomica = request.form['classeEconomica']
+    classeEconomica2 = request.form.getlist('classeEconomica')
+    classeEconomica =' '.join(map(str,classeEconomica2))
     if nomeEmpresa and cnpj and objetoPesquisa and tipoObjeto and horapesquisa and genero and faixaEtaria and classeEconomica:
         conn = mysql.connect()
         cursor = conn.cursor()
