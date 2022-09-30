@@ -1,6 +1,4 @@
-Impactados_IMPESQ
-
-<h1>Passo a passo para rodar a aplicação: </h1>
+<h3>Passo a passo para rodar a aplicação: </h3>
 
 git pull - para baixar o projeto do Github atualizado
 
