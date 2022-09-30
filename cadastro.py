@@ -43,7 +43,7 @@ def listar():
     cursor.execute('select empresa_nome, cnpj, objeto_pesquisa, tipo_objeto, hora_pesquisa, genero, faixa_etaria, classe_economica from tbl_objeto_pesquisa')
     data = cursor.fetchall()
     conn.commit()
-    return render_template('listar_pesquisa.html', datas=data)
+    return render_template('listar_pesquisa1.html', datas=data)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8888))
