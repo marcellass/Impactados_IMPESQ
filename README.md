@@ -10,7 +10,7 @@
 
 <h4>Dentro da imagem</h4>
 <ul>
-  <li> mysql -uroot -p - entrar no banco
+  <li> mysql -uroot -p - entrar no banco </br>
        senha: impactados</li>
   <li> create schema pesquisa; </li>
   <li> use pesquisa; </li>
