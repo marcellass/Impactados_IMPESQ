@@ -1,12 +1,13 @@
-<h3>Passo a passo para rodar a aplicação: </h3>
+<h2>Passo a passo para rodar a aplicação: </h2>
 
-git pull - para baixar o projeto do Github atualizado
+<ul>
+  <li> git pull - para baixar o projeto do Github atualizado</li>
+  <li> docker-compose stop - ele para o docker</li>
+  <li> docker-compose start - starta com as atualizações feitas </li>
+  <li> docker exec -it <id do container> /bin/bash - entrar dentro da imagem </li>
+</ul>
 
-docker-compose stop - ele para o docker
 
-docker-compose start - starta com as atualizações feitas
-
-docker exec -it <id do container> /bin/bash - entrar dentro da imagem
 
 Dentro da imagem:
 mysql -uroot -p - entrar no banco
