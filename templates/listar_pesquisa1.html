@@ -24,8 +24,8 @@
 
         <div class="container">
             <div class="row row-cols-2">
+                {% for item in datas %}
                 <div class="col">
-                    {% for item in datas %}
                     <div class="card" style="width: 18rem;">
                         
                         <div class="card-header">
@@ -41,12 +41,11 @@
                             <li class="list-group-item">{{item[5]}}</li>
                             <li class="list-group-item">{{item[6]}}</li>
                             <li class="list-group-item">{{item[7]}}</li> 
-                                   
                             </ul>
                         </div>   
                     </div>
-                    {% endfor %}   
                 </div>
+                {% endfor %}   
             </div>
         </div>
     </body>
