@@ -23,7 +23,7 @@
           </nav>
 
         <div class="container">
-            <div class="row row-cols-3">
+            <div class="row row-cols-2">
                 {% for item in datas %}
                 <div class="col">
                     <div class="card" style="width: 18rem;">
@@ -45,7 +45,47 @@
                         </div>   
                     </div>
                 </div>
-                {% endfor %}   
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        
+                        <div class="card-header">
+                          Dados da Pesquisa
+                            </div>
+                            
+                            <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{item[0]}}</li>
+                            <li class="list-group-item">{{item[1]}}</li>
+                            <li class="list-group-item">{{item[2]}}</li>
+                            <li class="list-group-item">{{item[3]}}</li>
+                            <li class="list-group-item">{{item[4]}}</li>
+                            <li class="list-group-item">{{item[5]}}</li>
+                            <li class="list-group-item">{{item[6]}}</li>
+                            <li class="list-group-item">{{item[7]}}</li> 
+                            </ul>
+                        </div>   
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        
+                        <div class="card-header">
+                          Dados da Pesquisa
+                            </div>
+                            
+                            <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{item[0]}}</li>
+                            <li class="list-group-item">{{item[1]}}</li>
+                            <li class="list-group-item">{{item[2]}}</li>
+                            <li class="list-group-item">{{item[3]}}</li>
+                            <li class="list-group-item">{{item[4]}}</li>
+                            <li class="list-group-item">{{item[5]}}</li>
+                            <li class="list-group-item">{{item[6]}}</li>
+                            <li class="list-group-item">{{item[7]}}</li> 
+                            </ul>
+                        </div>   
+                    </div>
+                </div>
+                {% for item in datas %}
             </div>
         </div>
     </body>
