@@ -11,6 +11,7 @@
   <li> docker-compose stop - ele somente para o docker</li>
   <li> docker-compose start - starta com as atualizações feitas </li>
   <li> docker exec -it <id do container> /bin/bash - entrar dentro da imagem </li>
+  <li> docker-compose down --rmi all - da o down e remove todas as imagens</li>
 </ul>
 
 <h4>Dentro da imagem</h4>
