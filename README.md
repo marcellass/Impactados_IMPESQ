@@ -7,8 +7,8 @@
   <li> git push - para mandar atualização para o Github</li>
   <li> docker-compose down - ele derruba o docker e apaga tudo</li>
   <li> docker-compose up -d - ele inicia o docker</li>
-  <h5>Caso quiser atualizar o arquivo e rodar novamente, não precisa dar o down(apaga tudo), basta dar o stop e o start</h5>
-  <li> docker-compose stop - ele para o docker</li>
+  <h5>Caso quiser atualizar algum arquivo e rodar novamente, não precisa dar o down(apaga tudo), basta dar o stop e o start</h5>
+  <li> docker-compose stop - ele somente para o docker</li>
   <li> docker-compose start - starta com as atualizações feitas </li>
   <li> docker exec -it <id do container> /bin/bash - entrar dentro da imagem </li>
 </ul>
