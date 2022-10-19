@@ -26,4 +26,20 @@ button.addEventListener("click", function(){
   contato.classList.toggle("hide");
 });
 
+var button = document.getElementById("action-familia");
+
+button.addEventListener("click", function(){
+  var contato = document.getElementById("user-familia");
+  contato.classList.toggle("hide");
+});
+
+var button = document.getElementById("action-trabalho");
+
+button.addEventListener("click", function(){
+  var contato = document.getElementById("user-trabalho");
+  contato.classList.toggle("hide");
+});
+
+
+
 
