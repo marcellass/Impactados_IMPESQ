@@ -1,0 +1,10 @@
+.hide {
+    display: none;
+}
+
+
+.btn-circle.btn-xl {
+    border-radius: 60px;
+    font-size: 15px;
+    text-align: center;
+}
