@@ -36,6 +36,37 @@ def cadastrar():
 
     return render_template('cadastro_pesquisa.html')
 
+@app.route('/convidado', methods=['POST','GET'])
+def cadastro_convidado():
+    nomeConvidado = request.form['nomeConvidado']
+    sobrenomeConvidado = request.form['sobrenomeConvidado']
+    datanasc = request.form['datanasc']
+    rgConvidado = request.form['rgConvidado']
+    ufConvidado = request.form['ufConvidado'] #VER DEPOIS
+    cpfConvidado = request.form['cpfConvidado']
+    enderecoConvidado = request.form['enderecoConvidado']
+    bairroConvidado = request.form['bairroConvidado']
+    cidadeConvidado = request.form['cidadeConvidado']
+    cepConvidado = request.form['cepConvidado']
+    if nomeConvidado and sobrenomeConvidado and datanasc and rgConvidado and ufConvidado and cpfConvidado and enderecoConvidado and bairroConvidado and cidadeConvidado and cepConvidado:
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        cursor.execute('insert into tbl_cadastro_convidado (nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado))
+        conn.commit()
+
+    return render_template('cadastro_convidado.html')
+
+@app.route('/listar2', methods=['POST','GET'])
+def listar_convidado():
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute('select nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado')
+    data = cursor.fetchall()
+    conn.commit()
+    return render_template('listar_convidado.html', datas=data)
+
+    
+
 @app.route('/listar', methods=['POST','GET'])
 def listar():
     conn = mysql.connect()
@@ -43,7 +74,9 @@ def listar():
     cursor.execute('select empresa_nome, cnpj, objeto_pesquisa, tipo_objeto, hora_pesquisa, genero, faixa_etaria, classe_economica from tbl_objeto_pesquisa')
     data = cursor.fetchall()
     conn.commit()
-    return render_template('listar_pesquisa1.html', datas=data)
+    return render_template('listar_pesquisa.html', datas=data)
+
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8888))
