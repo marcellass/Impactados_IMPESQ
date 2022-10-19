@@ -13,10 +13,14 @@ app.config['MYSQL_DATABASE_HOST'] = 'db'
 mysql.init_app(app)
 
 @app.route('/')
-def main():
+def main_pesquisa():
     return render_template('cadastro_pesquisa.html')
 
-@app.route('/cadastrar', methods=['POST', 'GET'])
+@app.route('/convidado')
+def main_convidado():
+    return render_template('cadastro_convidado.html')
+
+@app.route('/cadastrar', methods=['POST','GET'])
 def cadastrar():
     nomeEmpresa = request.form['nomeEmpresa']
     cnpj = request.form['cnpj']
@@ -36,22 +40,43 @@ def cadastrar():
 
     return render_template('cadastro_pesquisa.html')
 
-@app.route('/convidado', methods=['POST','GET'])
-def cadastro_convidado():
-    nomeConvidado = request.form['nomeConvidado']
-    sobrenomeConvidado = request.form['sobrenomeConvidado']
-    datanasc = request.form['datanasc']
-    rgConvidado = request.form['rgConvidado']
-    ufConvidado = request.form['ufConvidado'] #VER DEPOIS
-    cpfConvidado = request.form['cpfConvidado']
-    enderecoConvidado = request.form['enderecoConvidado']
-    bairroConvidado = request.form['bairroConvidado']
-    cidadeConvidado = request.form['cidadeConvidado']
-    cepConvidado = request.form['cepConvidado']
-    if nomeConvidado and sobrenomeConvidado and datanasc and rgConvidado and ufConvidado and cpfConvidado and enderecoConvidado and bairroConvidado and cidadeConvidado and cepConvidado:
+@app.route('/convidado', methods=['POST', 'GET'])
+def convidado():
+    nomeConvidado = str(request.form['nomeConvidado'])
+    sobrenomeConvidado = str(request.form['sobrenomeConvidado'])
+    datanasc = str(request.form['datanasc'])
+    rgConvidado = str(request.form['rgConvidado'])
+    ufConvidado = str(request.form['ufConvidado'])
+    cpfConvidado = str(request.form['cpfConvidado'])
+    enderecoConvidado = str(request.form['enderecoConvidado'])
+    bairroConvidado = str(request.form['bairroConvidado'])
+    cidadeConvidado = str(request.form['cidadeConvidado'])
+    cepConvidado = str(request.form['cepConvidado'])
+    zonaConvidado = str(request.form['zonaConvidado'])
+    formacaoConvidado = str(request.form['formacaoConvidado'])
+    escolaridadeConvidado = str(request.form['escolaridadeConvidado'])
+    ano_escolaridade = str(request.form['ano_escolaridade'])
+    periodoConvidado = str(request.form['periodoConvidado'])
+    estadoCivilConvidado = str(request.form['estadoCivilConvidado'])
+    filhoConvidado = str(request.form['filhoConvidado'])
+    primeiroFilho = str(request.form['primeiroFilho'])
+    segundoFilho = str(request.form['segundoFilho'])
+    nascimentoPrimeiroFilho = str(request.form['nascimentoPrimeiroFilho'])
+    nascimentoSegundoFilho = str(request.form['nascimentoSegundoFilho'])
+    trabalhoConvidado = str(request.form['trabalhoConvidado'])
+    horarioTrabalho = str(request.form['horarioTrabalho'])
+    empresaConvidado = str(request.form['empresaConvidado'])
+    ramoConvidado = str(request.form['ramoConvidado'])
+    telefoneEmpresa = str(request.form['telefoneEmpresa'])
+    telefoneResidencial = str(request.form['telefoneResidencial'])
+    celularConvidado = str(request.form['celularConvidado'])
+    operadoraConvidado = str(request.form['operadoraConvidado'])
+    opcaoOperadora = str(request.form['opcaoOperadora'])
+    emailConvidado = str(request.form['emailConvidado'])
+    if nomeConvidado and sobrenomeConvidado and datanasc and rgConvidado and ufConvidado and cpfConvidado and enderecoConvidado and bairroConvidado and cidadeConvidado and cepConvidado and zonaConvidado and formacaoConvidado and escolaridadeConvidado and ano_escolaridade and periodoConvidado and estadoCivilConvidado and filhoConvidado and primeiroFilho and segundoFilho and nascimentoPrimeiroFilho and nascimentoSegundoFilho and trabalhoConvidado and horarioTrabalho and empresaConvidado and ramoConvidado and telefoneEmpresa and telefoneResidencial and celularConvidado and operadoraConvidado and opcaoOperadora and emailConvidado:
         conn = mysql.connect()
         cursor = conn.cursor()
-        cursor.execute('insert into tbl_cadastro_convidado (nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado))
+        cursor.execute('insert into tbl_cadastro_convidado (nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado, zonaConvidado, formacaoConvidado, escolaridadeConvidado, ano_escolaridade, periodoConvidado, estadoCivilConvidado, filhoConvidado, primeiroFilho, segundoFilho, nascimentoPrimeiroFilho, nascimentoSegundoFilho, trabalhoConvidado, horarioTrabalho, empresaConvidado, ramoConvidado, telefoneEmpresa, telefoneResidencial, celularConvidado, operadoraConvidado, opcaoOperadora, emailConvidado) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado, zonaConvidado, formacaoConvidado, escolaridadeConvidado, ano_escolaridade, periodoConvidado, estadoCivilConvidado, filhoConvidado, primeiroFilho, segundoFilho, nascimentoPrimeiroFilho, nascimentoSegundoFilho, trabalhoConvidado, horarioTrabalho, empresaConvidado, ramoConvidado, telefoneEmpresa, telefoneResidencial, celularConvidado, operadoraConvidado, opcaoOperadora, emailConvidado))
         conn.commit()
 
     return render_template('cadastro_convidado.html')
@@ -60,7 +85,7 @@ def cadastro_convidado():
 def listar_convidado():
     conn = mysql.connect()
     cursor = conn.cursor()
-    cursor.execute('select nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado')
+    cursor.execute('select * from tbl_cadastro_convidado')
     data = cursor.fetchall()
     conn.commit()
     return render_template('listar_convidado.html', datas=data)

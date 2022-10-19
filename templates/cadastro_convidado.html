@@ -5,9 +5,19 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>IMPESQ</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="main.js" defer></script>
-    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+    <style>
+        .hide {
+            display: none;
+        }
+
+
+        .btn-circle.btn-xl {
+            border-radius: 60px;
+            font-size: 15px;
+            text-align: center;
+        }
+    </style>
 </head>
     <body class="bg-light text-dark shadow-none">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow p-2 mb-5 rounded">
@@ -26,7 +36,7 @@
         </div>
       </nav>
       <div class="container">
-        <form action="/cadastrar/convidado" method="POST" name="cadastrar" id="form">
+        <form action="/convidado" method="POST" name="convidado" id="form">
 
             <div class="container p-3 d-flex justify-content-start">
                 <div class="row d-flex flex-row">
@@ -42,24 +52,24 @@
                 <div class="row row-cols-2 p-5 text-primary">
                     <div class="col-md-5 mb-3">
                     <label class="form-label">Nome</label>
-                    <input type="email" class="form-control" name="nome" placeholder="João">
+                    <input type="text" class="form-control" name="nomeConvidado" placeholder="João">
                     </div>
                     <div class="col-md-5 mb-3">
                     <label class="form-label">Sobrenome</label>
-                    <input type="email" class="form-control" name="sobrenome" placeholder="Ribeiro Nascimento">
+                    <input type="text" class="form-control" name="sobrenomeConvidado" placeholder="Ribeiro Nascimento">
                     </div>
                     <div class="col-md-2 mb-3">
                     <label class="form-label">Data de Nascimento</label>
-                    <input type="date" class="form-control" name="nascimento">
+                    <input type="date" class="form-control" name="datanasc">
                     </div>
                     <div class="col-md-5 mb-3">
                     <label class="form-label">RG</label>
-                    <input type="email" class="form-control" name="rg" placeholder="00.000.000-0">
+                    <input type="text" class="form-control" name="rgConvidado" placeholder="00.000.000-0">
                     </div>
                     <div class="col-md-3 mb-3">
                     <label class="form-label">UF</label>
-                    <select class="form-select">
-                        <option selected>Selcione...</option>
+                    <select class="form-select" name="ufConvidado">
+                        <option selected>Selecione...</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
                         <option value="AP">Amapá</option>
@@ -91,7 +101,7 @@
                     </div>
                     <div class="col-md-4 mb-3">
                     <label class="form-label">CPF</label>
-                    <input type="password" class="form-control" name="cpf" placeholder="000.000.000-00">
+                    <input type="text" class="form-control" name="cpfConvidado" placeholder="000.000.000-00">
                     </div>
                 </div>
             </div>
@@ -111,25 +121,25 @@
                 <div class="row row-cols-2 p-5 text-primary">
                     <div class="col-6 mb-3">
                         <label class="form-label">Logradouro</label>
-                        <input type="text" class="form-control" placeholder="Rua João de Barro" name="endereco">
+                        <input type="text" class="form-control" placeholder="Rua João de Barro" name="enderecoConvidado">
                     </div>
                     <div class="col-6 mb-3">
                         <label class="form-label">Bairro</label>
-                        <input type="text" class="form-control" placeholder="Laranjeiras" name="bairro">
+                        <input type="text" class="form-control" placeholder="Laranjeiras" name="bairroConvidado">
                     </div>
                     <div class="col-4 mb-3">
                         <label class="form-label">Cidade</label>
-                        <input type="text" class="form-control" name="cidade" placeholder="São Paulo">
+                        <input type="text" class="form-control" name="cidadeConvidado" placeholder="São Paulo">
                     </div>
                     
                     <div class="col-2 mb-3">
                         <label class="form-label">CEP</label>
-                        <input type="text" class="form-control" name="cep" placeholder="00000-000">
+                        <input type="text" class="form-control" name="cepConvidado" placeholder="00000-000">
                     </div>
                     <div class="col-md-3 mb-3">
                         <label class="form-label text-primary">Zona</label>
-                        <select class="form-select">
-                            <option selected>Selcione...</option>
+                        <select class="form-select" name="zonaConvidado">
+                            <option selected>Selecione...</option>
                             <option value="Zona Norte">Zona Norte</option>
                             <option value="Zona Sul">Zona Sul</option>
                             <option value="Zona Leste">Zona Leste</option>
@@ -155,7 +165,7 @@
                 <div class="row row-cols-2 p-5 text-primary">
                     <div class="col-md-3 mb-3">
                         <label class="form-label text-primary">Grau de Formação</label>
-                        <select class="form-select">
+                        <select class="form-select" name="formacaoConvidado">
                             <option selected>Selcione...</option>
                             <option value="primario">Primário</option>
                             <option value="Ginásio incompleto">Ginásio incompleto</option>
@@ -167,28 +177,28 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label class="form-label">Escola ou Faculdade</label>
-                        <input type="text" class="form-control" name="cep" placeholder="Faculdade Impacta de Tecnologia">
+                        <input type="text" class="form-control" name="escolaridadeConvidado" placeholder="Faculdade Impacta de Tecnologia">
                     </div>
                     <div class="col-md-3 mb-3">
                         <label class="form-label">Ano</label>
-                        <input type="text" class="form-control" name="cep" placeholder="Segundo Semestre">
+                        <input type="text" class="form-control" name="ano_escolaridade" placeholder="Segundo Semestre">
                     </div>
                     <div class="col-md-4 mb-3 text-dark">
                         <label class="form-label text-primary">Período</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="manha" checked>
+                            <input class="form-check-input" type="radio" name="periodoConvidado" id="gridRadios1" value="manha" checked>
                             <label class="form-check-label" for="gridRadios1">
                               Manhã
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="tarde">
+                            <input class="form-check-input" type="radio" name="periodoConvidado" id="gridRadios2" value="tarde">
                             <label class="form-check-label" for="gridRadios2">
                              Tarde
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="noite">
+                            <input class="form-check-input" type="radio" name="periodoConvidado" id="gridRadios3" value="noite">
                             <label class="form-check-label" for="gridRadios3">
                              Noite
                             </label>
@@ -213,19 +223,19 @@
                     <div class="col-md-2 mb-3">
                         <label class="form-label text-primary">Estado Civil</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="estadoCivil" id="estadoCivil1" value="Solteiro" checked>
+                            <input class="form-check-input" type="radio" name="estadoCivilConvidado" id="estadoCivil1" value="Solteiro" checked>
                             <label class="form-check-label" for="estadoCivil1">
                               Solteiro
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="estadoCivil" id="estadoCivil2" value="Casado">
+                            <input class="form-check-input" type="radio" name="estadoCivilConvidado" id="estadoCivil2" value="Casado">
                             <label class="form-check-label" for="estadoCivil2">
                              Casado
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="estadoCivil" id="estadoCivil3" value="outro">
+                            <input class="form-check-input" type="radio" name="estadoCivilConvidado" id="estadoCivil3" value="outro">
                             <label class="form-check-label" for="estadoCivil3">
                              Outro
                             </label>
@@ -234,13 +244,13 @@
                     <div class="col-md-2 mb-3">
                         <label class="form-label text-primary">Possuí filhos</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="possuiFilho" id="simFilho" value="sim" checked>
+                            <input class="form-check-input" type="radio" name="filhoConvidado" id="simFilho" value="sim" checked>
                             <label class="form-check-label" for="simFilho">
                               Sim
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="possuiFilho" id="naoFilho" value="não">
+                            <input class="form-check-input" type="radio" name="filhoConvidado" id="naoFilho" value="não">
                             <label class="form-check-label" for="naoFilho">
                              Não
                             </label>
@@ -250,13 +260,13 @@
                         <label class="form-label">Nome do primeiro Filho(a)</label>
                         <input type="text" class="form-control mb-2" name="primeiroFilho" placeholder="Gabriel Penha">
                         <label class="form-label">Nome do segundo Filho(a)</label>
-                        <input type="text" class="form-control" name="primeiroFilho" placeholder="Fernando Penha">
+                        <input type="text" class="form-control" name="segundoFilho" placeholder="Fernando Penha">
                     </div>
                     <div class="col-md-4 text-primary">
                         <label class="form-label">Data de nascimento do primeiro Filho(a)</label>
-                        <input type="date" class="form-control mb-2" name="primeiroFilho">
+                        <input type="date" class="form-control mb-2" name="nascimentoPrimeiroFilho">
                         <label class="form-label">Data de nascimento do segundo Filho(a)</label>
-                        <input type="date" class="form-control" name="primeiroFilho">
+                        <input type="date" class="form-control" name="nascimentoSegundoFilho">
                     </div>
                 </div>
             </div>
@@ -277,13 +287,13 @@
                     <div class="col-md-2 mb-3">
                         <label class="form-label text-primary">Possuí Trabalho</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="possuiTrabalho" id="simTrabalho" value="sim" checked>
+                            <input class="form-check-input" type="radio" name="trabalhoConvidado" id="simTrabalho" value="sim" checked>
                             <label class="form-check-label" for="simTrabalho">
                               Sim
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="possuiTrabalho" id="naoTrabalho" value="não">
+                            <input class="form-check-input" type="radio" name="trabalhoConvidado" id="naoTrabalho" value="não">
                             <label class="form-check-label" for="naoTrabalho">
                              Não
                             </label>
@@ -291,7 +301,7 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label class="form-label text-primary">Horário</label>
-                        <select class="form-select">
+                        <select class="form-select" name="horarioTrabalho">
                             <option selected>Selcione...</option>
                             <option value="Integral">Integral</option>
                             <option value="Meio Periodo">Meio Período</option>
@@ -300,11 +310,11 @@
                     </div>
                     <div class="col-2 mb-3 text-primary">
                         <label class="form-label">Empresa</label>
-                        <input type="text" class="form-control" name="empresa" placeholder="Impactados LTDA">
+                        <input type="text" class="form-control" name="empresaConvidado" placeholder="Impactados LTDA">
                     </div>
                     <div class="col-2 mb-3 text-primary">
                         <label class="form-label">Ramo</label>
-                        <input type="text" class="form-control" name="ramo" placeholder="Tecnologia">
+                        <input type="text" class="form-control" name="ramoConvidado" placeholder="Tecnologia">
                     </div>
                     <div class="col-2 mb-3 text-primary">
                         <label class="form-label">Telefone da empresa</label>
@@ -336,23 +346,23 @@
                     </div>  
                     <div class="col-2 mb-3 text-primary">
                         <label class="form-label">Celular</label>
-                        <input type="text" class="form-control" name="celular" placeholder="11 96452-3133">
+                        <input type="text" class="form-control" name="celularConvidado" placeholder="11 96452-3133">
                     </div>
                     <div class="col-2 mb-3 text-primary">
                         <label class="form-label">Operadora</label>
-                        <input type="text" class="form-control" name="operadora" placeholder="Tim">
+                        <input type="text" class="form-control" name="operadoraConvidado" placeholder="Tim">
                     </div> 
                     <div class="col-md-3 mb-3">
                         <label class="form-label text-primary">Pré ou Pós</label>
-                        <select class="form-select">
-                            <option selected>Selcione...</option>
+                        <select class="form-select" name="opcaoOperadora">
+                            <option selected>Selecione...</option>
                             <option value="pre">Pré</option>
                             <option value="pos">Pós</option>
                         </select>
                     </div>
                     <div class="col-4 mb-3 text-primary">
                         <label class="form-label">email</label>
-                        <input type="email" class="form-control" name="operadora" placeholder="impactados@hotmail.com">
+                        <input type="email" class="form-control" name="emailConvidado" placeholder="impactados@hotmail.com">
                     </div> 
                     
 
@@ -366,7 +376,7 @@
             <div class="col-12 mb-3">
                 <div class="row justify-content-md-center">
                     <div class="d-grid gap-2 col-4 mx-auto">
-                        <button type="submit" class="btn btn-outline-primary">Cadastrar Convidado</button>
+                        <button type="submit" class="btn btn-outline-primary" for="form">Cadastrar Convidado</button>
                     </div>
                 </div>
             </div>
