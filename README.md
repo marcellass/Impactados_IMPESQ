@@ -1,6 +1,6 @@
 <h2>Passo a passo para utilização: </h2>
 
-<h2>Sprint 1 </h2>
+<h3>Sprint 1 </h3>
 
 <h4>Fora da imagem/No dockerplay</h4>
 <ul>
