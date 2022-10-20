@@ -1,4 +1,4 @@
-<h2>Passo a passo para rodar a aplicação: </h2>
+<h2>Sprint: </h2>
 
 <h4>Fora da imagem/No dockerplay</h4>
 <ul>
