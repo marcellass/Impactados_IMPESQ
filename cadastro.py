@@ -20,7 +20,7 @@ def main_pesquisa():
 def main_convidado():
     return render_template('cadastro_convidado.html')
 
-@app.route('/cadastrar', methods=['POST','GET'])
+@app.route('/cadastrar/pesquisa', methods=['POST','GET'])
 def cadastrar():
     nomeEmpresa = request.form['nomeEmpresa']
     cnpj = request.form['cnpj']
@@ -40,7 +40,7 @@ def cadastrar():
 
     return render_template('cadastro_pesquisa.html')
 
-@app.route('/convidado', methods=['POST', 'GET'])
+@app.route('/cadastrar/convidado', methods=['POST', 'GET'])
 def convidado():
     nomeConvidado = str(request.form['nomeConvidado'])
     sobrenomeConvidado = str(request.form['sobrenomeConvidado'])
@@ -89,7 +89,7 @@ def convidado():
 
     return render_template('cadastro_convidado.html')
 
-@app.route('/listar2', methods=['POST','GET'])
+@app.route('/listar/convidado', methods=['POST','GET'])
 def listar_convidado():
     conn = mysql.connect()
     cursor = conn.cursor()
@@ -100,7 +100,7 @@ def listar_convidado():
 
     
 
-@app.route('/listar', methods=['POST','GET'])
+@app.route('/listar/pesquisa', methods=['POST','GET'])
 def listar():
     conn = mysql.connect()
     cursor = conn.cursor()
