@@ -355,25 +355,128 @@
                     <div class="col-md-3 mb-3">
                         <label class="form-label text-primary">Plano Operadora</label>
                         <select class="form-select" name="opcaoOperadora">
-                            <option selected>Selecione...</option>
-                            <option value="pre">Pré-pago</option>
+                            <option value="pre" selected>Pré-pago</option>
                             <option value="pos">Pós-pago</option>
-                            <option value="pos">Controle</option>
+                            <option value="controle">Controle</option>
                         </select>
                     </div>
                     <div class="col-4 mb-3 text-primary">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control" name="emailConvidado" placeholder="impactados@hotmail.com">
-                    </div> 
-                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="container p-3 d-flex justify-content-start">
+                <div class="row d-flex flex-row">
+                    <div class="flex-column col-11">
+                      <h3>Histórico de Participação</h3>
+                    </div>
+                    <div class="flex-column col-1">
+                        <button type="button" id="action-participacao" class="btn btn-outline-success btn-circle btn-xl">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="user-participacao" class="container shadow p-3 mb-5 bg-body rounded mt-3">
+                <div class="row row-cols-2 p-5">
+                    <div class="col-12 mb-5">
+                        <h6>Você, algum parente ou amigo próximo, trabaha ou trabalhou em:</h6>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label text-primary">Pesquisa de mercado</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pesquisaMercado" id="simPesquisa" value="sim" checked>
+                            <label class="form-check-label" for="simPesquisa">
+                              Sim
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pesquisaMercado" id="naoPesquisa" value="não">
+                            <label class="form-check-label" for="naoPesquisa">
+                             Não
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label text-primary">Marketing ou Publicidade</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="mktPubli" id="simMarketing" value="sim" checked>
+                            <label class="form-check-label" for="simMarketing">
+                              Sim
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="mktPubli" id="naoTrabalho" value="não">
+                            <label class="form-check-label" for="naoTrabalho">
+                             Não
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-5">
+                        <label class="form-label text-primary">Rádio, Jornal, Revista ou TV</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rjrTv" id="simRjrtv" value="sim" checked>
+                            <label class="form-check-label" for="simRjrtv">
+                              Sim
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="rjrTv" id="naoRjrtv" value="não">
+                            <label class="form-check-label" for="naoRjrtv">
+                             Não
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-3 mb-3 text-primary">
+                        <label class="form-label">Já Participou de Pesquisa?</label>
+                        <!-- sim e nao-->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="participouPesquisa" id="participou" value="sim" checked>
+                            <label class="form-check-label text-dark" for="participou">
+                              Sim
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="participouPesquisa" id="naoPesquisa" value="não">
+                            <label class="form-check-label text-dark" for="naoPesquisa">
+                             Não
+                            </label>
+                        </div>
+                    </div>  
+                    <div class="col-2 mb-3 text-primary">
+                        <label class="form-label">Qual o Tipo?</label>
+                        <!-- check box e nao-->
+                        <!--em grupo e em entrevista--> 
+                        
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="tipoPesquisa" value="Em Grupo">
+                                <label class="form-check-label text-dark">Em grupo </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="tipoPesquisa" value="De Entrevista">
+                                <label class="form-check-label text-dark" >De Entrevista </label>
+                            </div>
+                    </div>
+                    <div class="col-4 mb-3 text-primary">
+                        <label class="form-label">Data aproximada da última participação?</label>
+                        <div class="col-6">
+                            <input type="date" class="form-control" name="dataUltimaPesquisa">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label class="form-label text-primary">Qual o assunto da última pesquisa?</label>
+                        <input type="text" class="form-control" name="assuntoUltimaPesquisa" placeholder="Alimento">
+                    </div>
+                </div>
 
                 </div>
             </div>
-            
-
-
             <!--BOTAO DE SUBMIT--> 
-            
             <div class="col-12 mb-3">
                 <div class="row justify-content-md-center">
                     <div class="d-grid gap-2 col-4 mx-auto">
@@ -384,4 +487,53 @@
         </form>
        </div>
     </body>
+    <script defer>
+        var button = document.getElementById("action");
+        button.addEventListener("click", function(){
+            var cont = document.getElementById("cont");
+            cont.classList.toggle("hide");
+        });
+
+        var button = document.getElementById("action1");
+
+        button.addEventListener("click", function(){
+        var endereco = document.getElementById("endereco");
+        endereco.classList.toggle("hide");
+        });
+
+        var button = document.getElementById("action-formacao");
+
+        button.addEventListener("click", function(){
+        var grau = document.getElementById("grau-formacao");
+        grau.classList.toggle("hide");
+        });
+
+        var button = document.getElementById("action-contato");
+
+        button.addEventListener("click", function(){
+        var contato = document.getElementById("user-contato");
+        contato.classList.toggle("hide");
+        });
+
+        var button = document.getElementById("action-familia");
+
+        button.addEventListener("click", function(){
+        var contato = document.getElementById("user-familia");
+        contato.classList.toggle("hide");
+        });
+
+        var button = document.getElementById("action-trabalho");
+
+        button.addEventListener("click", function(){
+        var contato = document.getElementById("user-trabalho");
+        contato.classList.toggle("hide");
+        });
+
+        var button = document.getElementById("action-participacao");
+
+        button.addEventListener("click", function(){
+        var cont = document.getElementById("user-participacao");
+        cont.classList.toggle("hide");
+        });
+    </script>
 </html>

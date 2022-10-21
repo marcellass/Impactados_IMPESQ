@@ -29,7 +29,7 @@
             <div class="row bg-primary text-light p-3 rounded">
               <div class="col mb-2">
                 <h3>
-                  Convidado: {{item[0]}} 
+                  Convidado: {{item[1]}} {{item[2]}}
                 </h3>
               </div>
             </div>
@@ -55,128 +55,161 @@
                   <div class="col-3 mb-3 bg-light rounded shadow">
                     <label class="form-label">RG:</label>
                     <label class="form-label">{{item[4]}}</label>
-                </div>
-                <div class="col-3 mb-3 bg-light rounded shadow">
-                  <label class="form-label">UF:</label>
-                  <label class="form-label">{{item[5]}}</label>
-                </div> 
-                <div class="col-3 mb-3 bg-light rounded shadow">
-                  <label class="form-label">CPF:</label>
-                  <label class="form-label">{{item[6]}}</label>
-                </div>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">UF:</label>
+                    <label class="form-label">{{item[5]}}</label>
+                  </div> 
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">CPF:</label>
+                    <label class="form-label">{{item[6]}}</label>
+                  </div>
 
-                <!-- ENDEREÇO -->
-                <div class="col-3 mb-3 bg-light rounded shadow">
-                  <label class="form-label">Endereço:</label>
-                  <label class="form-label">{{item[7]}}</label>
-                </div>
-                <div class="col-3 mb-3 bg-light rounded shadow">
-                  <label class="form-label">Bairro:</label>
-                  <label class="form-label">{{item[8]}}</label>
-              </div>
-              <div class="col-3 mb-3 bg-light rounded shadow">
-                <label class="form-label">Cidade:</label>
-                <label class="form-label">{{item[9]}}</label>
-              </div>  
-              <div class="col-3 mb-3 bg-light rounded shadow">
-                <label class="form-label">CEP:</label>
-                <label class="form-label">{{item[10]}}</label>
-              </div>
-              <div class="col-3 mb-3 bg-light rounded shadow">
-                <label class="form-label">Zona:</label>
-                <label class="form-label">{{item[11]}}</label>
-              </div>
+                  <!-- ENDEREÇO -->
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Endereço:</label>
+                    <label class="form-label">{{item[7]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Bairro:</label>
+                    <label class="form-label">{{item[8]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Cidade:</label>
+                    <label class="form-label">{{item[9]}}</label>
+                  </div>  
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">CEP:</label>
+                    <label class="form-label">{{item[10]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Zona:</label>
+                    <label class="form-label">{{item[11]}}</label>
+                  </div>
 
-              <!-- FORMAÇÃO ACADÊMICA -->
-              <div class="col-3 mb-3 bg-light rounded shadow">
-                <label class="form-label">Grau de Formação:</label>
-                <label class="form-label">{{item[12]}}</label>
-            </div>
-            <div class="col-3 mb-3 bg-light rounded shadow">
-              <label class="form-label">Escola ou Faculdade:</label>
-              <label class="form-label">{{item[13]}}</label>
-            </div>  
-            <div class="col-3 mb-3 bg-light rounded shadow">
-              <label class="form-label">Ano/Semestre:</label>
-              <label class="form-label">{{item[14]}}</label>
-            </div>
-            <div class="col-3 mb-3 bg-light rounded shadow">
-              <label class="form-label">Período:</label>
-              <label class="form-label">{{item[15]}}</label>
-            </div>
+                  <!-- FORMAÇÃO ACADÊMICA -->
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Grau de Formação:</label>
+                    <label class="form-label">{{item[12]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Escola ou Faculdade:</label>
+                    <label class="form-label">{{item[13]}}</label>
+                  </div>  
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Ano/Semestre:</label>
+                    <label class="form-label">{{item[14]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Período:</label>
+                    <label class="form-label">{{item[15]}}</label>
+                  </div>
 
-            <!-- DADOS DA FAMILIA -->
-            <div class="col-3 mb-3 bg-light rounded shadow">
-              <label class="form-label">Estado Civil:</label>
-              <label class="form-label">{{item[16]}}</label>
-          </div>
-            <div class="col-3 mb-3 bg-light rounded shadow">
-              <label class="form-label">Possui Filhos:</label>
-              <label class="form-label">{{item[17]}}</label>
-            </div>  
-            <div class="col-3 mb-3 bg-light rounded shadow">
-              <label class="form-label">Nome do primeiro filho:</label>
-              <label class="form-label">{{item[18]}}</label>
-            </div>
-            <div class="col-3 mb-3 bg-light rounded shadow">
-              <label class="form-label">Data de nascimento Primeiro filho:</label>
-              <label class="form-label">{{item[19]}}</label>
-            </div>
-            <div class="col-3 mb-3 bg-light rounded shadow">
-              <label class="form-label">Nome do segundo filho:</label>
-              <label class="form-label">{{item[20]}}</label>
-          </div>
-          <div class="col-3 mb-3 bg-light rounded shadow">
-            <label class="form-label">Data de nascimento Segundo filho:</label>
-            <label class="form-label">{{item[21]}}</label>
-          </div>  
+                  <!-- DADOS DA FAMILIA -->
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Estado Civil:</label>
+                    <label class="form-label">{{item[16]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Possui Filhos:</label>
+                    <label class="form-label">{{item[17]}}</label>
+                  </div>  
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Nome do primeiro filho:</label>
+                    <label class="form-label">{{item[18]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Data de nascimento Primeiro filho:</label>
+                    <label class="form-label">{{item[19]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Nome do segundo filho:</label>
+                    <label class="form-label">{{item[20]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Data de nascimento Segundo filho:</label>
+                    <label class="form-label">{{item[21]}}</label>
+                  </div>  
 
-          <!-- TRABALHO -->
-          <div class="col-3 mb-3 bg-light rounded shadow">
-            <label class="form-label">Possui Trabalho:</label>
-            <label class="form-label">{{item[22]}}</label>
-          </div>
-          <div class="col-3 mb-3 bg-light rounded shadow">
-            <label class="form-label">Horário:</label>
-            <label class="form-label">{{item[23]}}</label>
-          </div>
-          <div class="col-3 mb-3 bg-light rounded shadow">
-            <label class="form-label">Empresa:</label>
-            <label class="form-label">{{item[24]}}</label>
-        </div>
-        <div class="col-3 mb-3 bg-light rounded shadow">
-          <label class="form-label">Ramo:</label>
-          <label class="form-label">{{item[25]}}</label>
-        </div>  
-        <div class="col-3 mb-3 bg-light rounded shadow">
-          <label class="form-label">Telefone da Empresa:</label>
-          <label class="form-label">{{item[26]}}</label>
-        </div>
+                  <!-- TRABALHO -->
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Possui Trabalho:</label>
+                    <label class="form-label">{{item[22]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Horário:</label>
+                    <label class="form-label">{{item[23]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Empresa:</label>
+                    <label class="form-label">{{item[24]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Ramo:</label>
+                    <label class="form-label">{{item[25]}}</label>
+                  </div>  
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Telefone da Empresa:</label>
+                    <label class="form-label">{{item[26]}}</label>
+                  </div>
 
-        <!-- CONTATO -->
-        <div class="col-3 mb-3 bg-light rounded shadow">
-          <label class="form-label">Telefone Residencial:</label>
-          <label class="form-label">{{item[27]}}</label>
-        </div>
-        <div class="col-3 mb-3 bg-light rounded shadow">
-          <label class="form-label">Celular:</label>
-          <label class="form-label">{{item[28]}}</label>
-      </div>
-      <div class="col-3 mb-3 bg-light rounded shadow">
-        <label class="form-label">Operadora:</label>
-        <label class="form-label">{{item[29]}}</label>
-      </div>  
-      <div class="col-3 mb-3 bg-light rounded shadow">
-        <label class="form-label">Pré ou Pós:</label>
-        <label class="form-label">{{item[30]}}</label>
-      </div>  
-      <div class="col-3 mb-3 bg-light rounded shadow">
-        <label class="form-label">E-mail:</label>
-        <label class="form-label">{{item[31]}}</label>
-      </div> 
+                  <!-- CONTATO -->
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Telefone Residencial:</label>
+                    <label class="form-label">{{item[27]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Celular:</label>
+                    <label class="form-label">{{item[28]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Operadora:</label>
+                    <label class="form-label">{{item[29]}}</label>
+                  </div>  
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Pré ou Pós:</label>
+                    <label class="form-label">{{item[30]}}</label>
+                  </div>  
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">E-mail:</label>
+                    <label class="form-label">{{item[31]}}</label>
+                  </div> 
+
+                  <!-- HISTÓRICO PARTICIPAÇÃO -->
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Pesquisa de mercado:</label>
+                    <label class="form-label">{{item[32]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Marketing ou Publicidade:</label>
+                    <label class="form-label">{{item[33]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Rádio, Jornal, Revista ou TV:</label>
+                    <label class="form-label">{{item[34]}}</label>
+                  </div>  
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Já participou de pesquisa?</label>
+                    <label class="form-label">{{item[35]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Qual o tipo: </label>
+                    <label class="form-label">{{item[36]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Data ultima participação:</label>
+                    <label class="form-label">{{item[37]}}</label>
+                  </div>
+                  <div class="col-3 mb-3 bg-light rounded shadow">
+                    <label class="form-label">Qual o assunto da ultima pesquisa?</label><br>
+                    <label class="form-label">{{item[38]}}</label>
+                  </div>
         </div> 
         </div>
 
+        
+        </div> 
+        </div>
       {% endfor %}
     </body>
 </html>
