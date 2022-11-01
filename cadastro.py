@@ -1,3 +1,4 @@
+
 import os
 from flask import Flask, render_template, request
 from flaskext.mysql import MySQL
@@ -19,6 +20,10 @@ def main_pesquisa():
 @app.route('/convidado')
 def main_convidado():
     return render_template('cadastro_convidado.html')
+
+@app.route('/criterio')
+def main_criterio():
+    return render_template('criterio_pesquisa.html')
 
 @app.route('/cadastrar/pesquisa', methods=['POST','GET'])
 def cadastrar():
@@ -99,7 +104,6 @@ def listar_convidado():
     return render_template('listar_convidado.html', datas=data)
 
     
-
 @app.route('/listar/pesquisa', methods=['POST','GET'])
 def listar():
     conn = mysql.connect()
@@ -109,7 +113,33 @@ def listar():
     conn.commit()
     return render_template('listar_pesquisa.html', datas=data)
 
+@app.route('/cadastrar/criterio', methods=['POST','GET'])
+def criterio():
+    geladeira = int(request.form['geladeira'])
+    if geladeira == 1:
+        geladeira + 3
+    elif geladeira == 2:
+         geladeira + 7
+    elif geladeira == 3:
+         geladeira + 10
+    elif geladeira == 4:
+        geladeira + 14
+    else:
+         geladeira == 0
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute('insert into tbl_geladeira (geladeira) VALUES (%s)', (geladeira))
+    conn.commit()
+    return render_template('criterio_pesquisa.html')
 
+@app.route('/listar/criterio', methods=['POST','GET'])
+def listar_criterio():
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute('select * from tbl_geladeira')
+    data = cursor.fetchall()
+    conn.commit()
+    return render_template('listar_criterio.html', datas=data)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8888))
