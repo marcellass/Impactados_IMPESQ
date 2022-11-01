@@ -23,7 +23,7 @@ def main_convidado():
 
 @app.route('/criterio')
 def main_criterio():
-    return render_template('criterio_pesquisa.html')
+    return render_template('cadastro_criterio.html')
 
 @app.route('/cadastrar/pesquisa', methods=['POST','GET'])
 def cadastrar():
@@ -130,7 +130,7 @@ def criterio():
     cursor = conn.cursor()
     cursor.execute('insert into tbl_geladeira (geladeira) VALUES (%s)', (geladeira))
     conn.commit()
-    return render_template('criterio_pesquisa.html')
+    return render_template('cadastro_criterio.html')
 
 @app.route('/listar/criterio', methods=['POST','GET'])
 def listar_criterio():
