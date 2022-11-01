@@ -2,6 +2,7 @@
 import os
 from flask import Flask, render_template, request
 from flaskext.mysql import MySQL
+from utils import calculaCriterio
 
 mysql = MySQL()
 app = Flask(__name__)
@@ -116,19 +117,12 @@ def listar():
 @app.route('/cadastrar/criterio', methods=['POST','GET'])
 def criterio():
     geladeira = int(request.form['geladeira'])
-    if geladeira == 1:
-        geladeira + 3
-    elif geladeira == 2:
-         geladeira + 7
-    elif geladeira == 3:
-         geladeira + 10
-    elif geladeira == 4:
-        geladeira + 14
-    else:
-         geladeira == 0
+
+    total =  calculaCriterio(geladeira)
+
     conn = mysql.connect()
     cursor = conn.cursor()
-    cursor.execute('insert into tbl_geladeira (geladeira) VALUES (%s)', (geladeira))
+    cursor.execute('insert into tbl_geladeira (geladeira) VALUES (%s)', (total))
     conn.commit()
     return render_template('cadastro_criterio.html')
 
