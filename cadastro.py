@@ -87,12 +87,29 @@ def convidado():
     tipoPesquisa =' '.join(map(str,tipoPesquisa1))
     dataUltimaPesquisa = str(request.form['dataUltimaPesquisa'])
     assuntoUltimaPesquisa = str(request.form['assuntoUltimaPesquisa'])
-    if nomeConvidado and sobrenomeConvidado and datanasc and rgConvidado and ufConvidado and cpfConvidado and enderecoConvidado and bairroConvidado and cidadeConvidado and cepConvidado and zonaConvidado and formacaoConvidado and escolaridadeConvidado and ano_escolaridade and periodoConvidado and estadoCivilConvidado and filhoConvidado and primeiroFilho and segundoFilho and nascimentoPrimeiroFilho and nascimentoSegundoFilho and trabalhoConvidado and horarioTrabalho and empresaConvidado and ramoConvidado and telefoneEmpresa and telefoneResidencial and celularConvidado and operadoraConvidado and opcaoOperadora and emailConvidado and pesquisaMercado and mktPubli and rjrTv and participouPesquisa and tipoPesquisa and dataUltimaPesquisa and assuntoUltimaPesquisa:
+    geladeira = int(request.form['geladeira'])
+    banheiro = int(request.form['banheiro'])
+    freezer = int(request.form['freezer'])
+    microondas = int(request.form['microondas'])
+    lavaloucas = int(request.form['lavaloucas']) 
+    maquinaroupa = int(request.form['maquinaroupa'])
+    secarroupas = int(request.form['secarroupas'])
+    empregado = int(request.form['empregado'])
+    computador = int(request.form['computador'])
+    aguaencanada = int(request.form['aguaencanada'])
+    ruapavi = int(request.form['ruapavi'])
+    moto = int(request.form['moto'])
+    automovel = int(request.form['automovel'])
+    total =  calculaCriterio(geladeira, banheiro, freezer, microondas, lavaloucas, maquinaroupa, secarroupas, empregado, computador, aguaencanada, ruapavi, moto, automovel)
+    
+    if nomeConvidado and sobrenomeConvidado and datanasc and rgConvidado and ufConvidado and cpfConvidado and enderecoConvidado and bairroConvidado and cidadeConvidado and cepConvidado and zonaConvidado and formacaoConvidado and escolaridadeConvidado and ano_escolaridade and periodoConvidado and estadoCivilConvidado and filhoConvidado and primeiroFilho and segundoFilho and nascimentoPrimeiroFilho and nascimentoSegundoFilho and trabalhoConvidado and horarioTrabalho and empresaConvidado and ramoConvidado and telefoneEmpresa and telefoneResidencial and celularConvidado and operadoraConvidado and opcaoOperadora and emailConvidado and pesquisaMercado and mktPubli and rjrTv and participouPesquisa and tipoPesquisa and dataUltimaPesquisa and assuntoUltimaPesquisa:    
+        
         conn = mysql.connect()
         cursor = conn.cursor()
-        cursor.execute('insert into tbl_cadastro_convidado (nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado, zonaConvidado, formacaoConvidado, escolaridadeConvidado, ano_escolaridade, periodoConvidado, estadoCivilConvidado, filhoConvidado, primeiroFilho, segundoFilho, nascimentoPrimeiroFilho, nascimentoSegundoFilho, trabalhoConvidado, horarioTrabalho, empresaConvidado, ramoConvidado, telefoneEmpresa, telefoneResidencial, celularConvidado, operadoraConvidado, opcaoOperadora, emailConvidado, pesquisaMercado, mktPubli, rjrTv, participouPesquisa, tipoPesquisa, dataUltimaPesquisa, assuntoUltimaPesquisa) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado, zonaConvidado, formacaoConvidado, escolaridadeConvidado, ano_escolaridade, periodoConvidado, estadoCivilConvidado, filhoConvidado, primeiroFilho, segundoFilho, nascimentoPrimeiroFilho, nascimentoSegundoFilho, trabalhoConvidado, horarioTrabalho, empresaConvidado, ramoConvidado, telefoneEmpresa, telefoneResidencial, celularConvidado, operadoraConvidado, opcaoOperadora, emailConvidado, pesquisaMercado, mktPubli, rjrTv, participouPesquisa, tipoPesquisa, dataUltimaPesquisa, assuntoUltimaPesquisa ))
+        cursor.execute('insert into tbl_cadastro_convidado (nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado, zonaConvidado, formacaoConvidado, escolaridadeConvidado, ano_escolaridade, periodoConvidado, estadoCivilConvidado, filhoConvidado, primeiroFilho, segundoFilho, nascimentoPrimeiroFilho, nascimentoSegundoFilho, trabalhoConvidado, horarioTrabalho, empresaConvidado, ramoConvidado, telefoneEmpresa, telefoneResidencial, celularConvidado, operadoraConvidado, opcaoOperadora, emailConvidado, pesquisaMercado, mktPubli, rjrTv, participouPesquisa, tipoPesquisa, dataUltimaPesquisa, assuntoUltimaPesquisa, classificacao ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (nomeConvidado, sobrenomeConvidado, datanasc, rgConvidado, ufConvidado, cpfConvidado, enderecoConvidado, bairroConvidado, cidadeConvidado, cepConvidado, zonaConvidado, formacaoConvidado, escolaridadeConvidado, ano_escolaridade, periodoConvidado, estadoCivilConvidado, filhoConvidado, primeiroFilho, segundoFilho, nascimentoPrimeiroFilho, nascimentoSegundoFilho, trabalhoConvidado, horarioTrabalho, empresaConvidado, ramoConvidado, telefoneEmpresa, telefoneResidencial, celularConvidado, operadoraConvidado, opcaoOperadora, emailConvidado, pesquisaMercado, mktPubli, rjrTv, participouPesquisa, tipoPesquisa, dataUltimaPesquisa, assuntoUltimaPesquisa, total ))
         conn.commit()
-
+    
+    
     return render_template('cadastro_convidado.html')
 
 @app.route('/listar/convidado', methods=['POST','GET'])
