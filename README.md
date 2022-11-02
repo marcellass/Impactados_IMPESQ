@@ -41,11 +41,6 @@
 
 
 <h3>Sprint 3 </h3>
- 
- <h4>Fora da imagem/No dockerplay</h4>
-<ul>
-  <li> docker-compose down --rmi all - da um down no container e remove todas as imagens</li> 
-</ul>
 
  <h4>Dentro da imagem</h4>
 <ul>
