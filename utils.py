@@ -97,20 +97,6 @@ def calculaCriterioSecaRoupa(secaRoupa):
          secaRoupa == 0
     return pontuacao
 
-def calculaCriterioDVD(dvd):
-    pontuacao = dvd
-    if dvd == 1:
-        pontuacao = 1
-    elif dvd == 2:
-         pontuacao = 3
-    elif dvd == 3:
-         pontuacao = 4
-    elif dvd == 4:
-        pontuacao = 6
-    else:
-         dvd == 0
-    return pontuacao
-
 ##EMPREGADOS MENSALISTAS 0 3 7 10 13
 
 def calculaCriterioEmpregado(empregado):
@@ -175,13 +161,13 @@ def calculaCriterioMotocicleta(motocicleta):
 def calculaCriterioAutomovel(automovel):
     pontuacao = automovel
     if automovel == 1:
-        pontuacao = 1
-    elif automovel == 2:
-         pontuacao = 3
-    elif automovel == 3:
-         pontuacao = 3
-    elif automovel == 4:
         pontuacao = 3
+    elif automovel == 2:
+         pontuacao = 5
+    elif automovel == 3:
+         pontuacao = 8
+    elif automovel == 4:
+        pontuacao = 11
     else:
          automovel == 0
     return pontuacao
@@ -204,7 +190,7 @@ def defineClassificacao(pontuacaoTotal):
     return classificacao
 
 
-def calculaCriterio(geladeira, banheiro, freezer, microOndas, lavaLoucas, lavaRoupa, secaRoupa, dvd, empregado, computador, aguaEncanada, ruaPavimentada, motocicleta, automovel): 
+def calculaCriterio(geladeira, banheiro, freezer, microOndas, lavaLoucas, lavaRoupa, secaRoupa, empregado, computador, aguaEncanada, ruaPavimentada, motocicleta, automovel): 
     geladeira  = calculaCriterioGeladeira(geladeira)
     banheiro = calculaCriterioBanheiro(banheiro)
     freezer = calculaCriterioFreezer(freezer)
@@ -212,7 +198,6 @@ def calculaCriterio(geladeira, banheiro, freezer, microOndas, lavaLoucas, lavaRo
     lavaLoucas = calculaCriterioLavaLoucas(lavaLoucas)
     lavaRoupa = calculaCriterioLavaRoupa(lavaRoupa)
     secaRoupa = calculaCriterioSecaRoupa(secaRoupa)
-    dvd = calculaCriterioDVD(dvd)
     empregado = calculaCriterioEmpregado(empregado)
     computador = calculaCriterioComputador(computador)
     aguaEncanada = calculaCriterioAguaEncanada(aguaEncanada)
@@ -220,7 +205,7 @@ def calculaCriterio(geladeira, banheiro, freezer, microOndas, lavaLoucas, lavaRo
     motocicleta = calculaCriterioMotocicleta(motocicleta)
     automovel = calculaCriterioAutomovel(automovel)
 
-    total = geladeira + banheiro + freezer + microOndas + lavaLoucas + lavaRoupa + secaRoupa + dvd + empregado + computador + aguaEncanada + ruaPavimentada + motocicleta + automovel
+    total = geladeira + banheiro + freezer + microOndas + lavaLoucas + lavaRoupa + secaRoupa + empregado + computador + aguaEncanada + ruaPavimentada + motocicleta + automovel
 
     classificacaoSocial = defineClassificacao(total)
 
