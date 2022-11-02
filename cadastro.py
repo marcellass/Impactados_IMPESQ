@@ -116,13 +116,24 @@ def listar():
 
 @app.route('/cadastrar/criterio', methods=['POST','GET'])
 def criterio():
-    geladeira = int(request.form['geladeira'])
-
-    total =  calculaCriterio(geladeira)
+    geladeira = str(request.form['geladeira'])
+    banheiro = str(request.form['banheiro'])
+    freezer = str(request.form['freezer'])
+    microondas = str(request.form['microondas'])
+    lavaloucas = str(request.form['lavaloucas']) 
+    maquinaroupa = str(request.form['maquinaroupa'])
+    secarroupas = str(request.form['secarroupas'])
+    empregado = str(request.form['empregado'])
+    computador = str(request.form['computador'])
+    aguaencanada = str(request.form['aguaencanada'])
+    ruapavi = str(request.form['ruapavi'])
+    moto = str(request.form['moto'])
+    carro = str(request.form['carro'])
+    total =  calculaCriterio(geladeira, banheiro, freezer, microondas, lavaloucas, maquinaroupa, secarroupas, empregado, computador, aguaencanada, ruapavi, moto, carro)
 
     conn = mysql.connect()
     cursor = conn.cursor()
-    cursor.execute('insert into tbl_geladeira (geladeira) VALUES (%s)', (total))
+    cursor.execute('insert into tbl_geladeira (geladeira) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (total))
     conn.commit()
     return render_template('cadastro_criterio.html')
 

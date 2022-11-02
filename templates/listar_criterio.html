@@ -16,7 +16,7 @@
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                   <a class="nav-link " aria-current="page" href="#">Cadastro critério</a>
-                  <a class="nav-link active" href="#">Critérios Cadastradas</a>
+                  <a class="nav-link active" href="#">Critérios Cadastrados</a>
                 </div>
               </div>
             </div>
@@ -24,48 +24,20 @@
 
 
        {% for item in datas %}
-          <div id="user-contato" class="container shadow p-3 mb-5 bg-body rounded mt-3">
+          <div id="user-criterio" class="container shadow p-3 mb-5 bg-body rounded mt-3">
             
             <div class="row bg-primary text-light p-3 rounded">
               <div class="col mb-2">
                 <h3>
-                  Critério: {{item[0]}} 
+                  Critério: {{item[1]}} 
                 </h3>
               </div>
             </div>
             <div class="row row-cols-3 p-5">
                   <div class="col-3 mb-3 bg-light rounded shadow">
                       <label class="form-label">Geladeira:</label>
-                      <label class="form-label">{{item[0]}}</label>
+                      <label class="form-label">{{item[1]}}</label>
                   </div>
-                  <div class="col-3 mb-3 bg-light rounded shadow">
-                    <label class="form-label">CNPJ/CPF:</label>
-                    <label class="form-label">{{item[1]}}</label>
-                  </div>  
-                  <div class="col-3 mb-3 bg-light rounded shadow">
-                    <label class="form-label">Objeto da Pesquisa:</label>
-                    <label class="form-label">{{item[2]}}</label>
-                  </div>
-                  <div class="col-3 mb-3 bg-light rounded shadow">
-                    <label class="form-label">Tipo de objeto:</label>
-                    <label class="form-label">{{item[3]}}</label>
-                  </div>
-                  <div class="col-3 mb-3 bg-light rounded shadow">
-                    <label class="form-label">Data e Horário da Pesquisa:</label>
-                    <label class="form-label">{{item[4]}}</label>
-                </div>
-                <div class="col-3 mb-3 bg-light rounded shadow">
-                  <label class="form-label">Gênero dos Convidados:</label>
-                  <label class="form-label">{{item[5]}}</label>
-                </div> 
-                <div class="col-3 mb-3 bg-light rounded shadow">
-                  <label class="form-label">Faixa etária dos convidados:</label>
-                  <label class="form-label">{{item[6]}}</label>
-                </div>
-                <div class="col-3 mb-3 bg-light rounded shadow">
-                  <label class="form-label">Classificação socio-econômica:</label>
-                  <label class="form-label">{{item[7]}}</label>
-                </div>
             {% endfor %}
     </body>
   </html>
