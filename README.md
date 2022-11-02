@@ -38,10 +38,3 @@
 <ul>
   <li> CREATE TABLE tbl_cadastro_convidado ( convidado_id BIGINT NOT NULL AUTO_INCREMENT, nomeConvidado VARCHAR(50) NULL, sobrenomeConvidado VARCHAR(50) NULL, datanasc VARCHAR(50) NULL, rgConvidado VARCHAR(50) NULL, ufConvidado VARCHAR(50) NULL, cpfConvidado VARCHAR(50) NULL, enderecoConvidado VARCHAR(50) NULL, bairroConvidado VARCHAR(50) NULL, cidadeConvidado VARCHAR(50) NULL, cepConvidado VARCHAR(50) NULL, zonaConvidado VARCHAR(50) NULL, formacaoConvidado VARCHAR(50) NULL, escolaridadeConvidado VARCHAR(50) NULL, ano_escolaridade VARCHAR(50) NULL, periodoConvidado VARCHAR(50) NULL, estadoCivilConvidado VARCHAR(50) NULL, filhoConvidado VARCHAR(50) NULL, primeiroFilho VARCHAR(50) NULL, segundoFilho VARCHAR(50) NULL, nascimentoPrimeiroFilho VARCHAR(50) NULL, nascimentoSegundoFilho VARCHAR(50) NULL, trabalhoConvidado VARCHAR(50) NULL, horarioTrabalho VARCHAR(50) NULL, empresaConvidado VARCHAR(50) NULL, ramoConvidado VARCHAR(50) NULL, telefoneEmpresa VARCHAR(50) NULL, telefoneResidencial VARCHAR(50) NULL, celularConvidado VARCHAR(50) NULL, operadoraConvidado VARCHAR(50) NULL, opcaoOperadora VARCHAR(50) NULL, emailConvidado VARCHAR(50) NULL, pesquisaMercado VARCHAR(50) NULL, mktPubli VARCHAR(50) NULL, rjrTv VARCHAR(50) NULL, participouPesquisa VARCHAR(50) NULL, tipoPesquisa VARCHAR(50) NULL, dataUltimaPesquisa VARCHAR (50) NULL, assuntoUltimaPesquisa VARCHAR (50) NULL, classificacao VARCHAR(45) NULL, PRIMARY KEY (convidado_id)); - criação da tabela </li>
 </ul>
-
-<h3>Sprint 3 </h3>
-
- <h4>Dentro da imagem</h4>
-<ul>
-  <li> CREATE TABLE tbl_classificacao_socioeconomica ( criterio_id BIGINT NOT NULL AUTO_INCREMENT, classificacao VARCHAR(45) NULL, PRIMARY KEY (criterio_id)); - criação da tabela </li>
-</ul>
