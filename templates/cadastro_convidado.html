@@ -476,433 +476,435 @@
             </div>
 
             <div class="container p-3 d-flex justify-content-start">
-                <div class="row d-flex flex-row">
-                    <div class="flex-column col-12">
+                <div class="row row-cols-auto d-flex flex-row">
+                    <div class="flex-column col">
                       <h3>Classificação Socio-econômica</h3>
                     </div>
-                    <div class="flex-column col-2">
+                    <div class="flex-column col">
                         <button type="button" id="action-classificacao" class="btn btn-outline-success btn-circle btn-xl">+</button>
                     </div>
                 </div>
             </div>
-            <div id="classificacao" class="container shadow p-3 mb-5 bg-body rounded mt-3">             
-                <div class="col-2 mb-5">
-                    <!-- GELADEIRA-->
-                    <label class="form-label text-primary mb-3">Geladeira</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="geladeira" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                          0
-                        </label>
+            <div id="classificacao" class="container shadow p-3 mb-5 bg-body rounded mt-3">   
+                <div class="row row-cols-2 p-5">          
+                    <div class="col-2 mb-3">
+                        <!-- GELADEIRA-->
+                        <label class="form-label text-primary mb-3">Geladeira</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="geladeira" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="geladeira" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="geladeira" id="gridRadios3" value="2">
+                            <label class="form-check-label" for="gridRadios3">
+                            2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="geladeira" id="gridRadios3" value="3">
+                            <label class="form-check-label" for="gridRadios3">
+                            3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="geladeira" id="gridRadios3" value="4">
+                            <label class="form-check-label" for="gridRadios3">
+                            4
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="geladeira" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                         1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="geladeira" id="gridRadios3" value="2">
-                        <label class="form-check-label" for="gridRadios3">
-                         2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="geladeira" id="gridRadios3" value="3">
-                        <label class="form-check-label" for="gridRadios3">
-                         3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="geladeira" id="gridRadios3" value="4">
-                        <label class="form-check-label" for="gridRadios3">
-                         4
-                        </label>
-                    </div>
-                </div>
 
-                <!-- BANHEIRO-->
-                <div class="col-2 mb-3">
-                    <label class="form-label text-primary mb-3">Banheiro</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="banheiro" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
+                    <!-- BANHEIRO-->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary mb-3">Banheiro</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="banheiro" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="banheiro" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="banheiro" id="gridRadios3" value="2">
+                            <label class="form-check-label" for="gridRadios3">
+                            2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="banheiro" id="gridRadios3" value="3">
+                            <label class="form-check-label" for="gridRadios3">
+                            3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="banheiro" id="gridRadios3" value="4">
+                            <label class="form-check-label" for="gridRadios3">
+                            4
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="banheiro" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="banheiro" id="gridRadios3" value="2">
-                        <label class="form-check-label" for="gridRadios3">
-                        2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="banheiro" id="gridRadios3" value="3">
-                        <label class="form-check-label" for="gridRadios3">
-                        3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="banheiro" id="gridRadios3" value="4">
-                        <label class="form-check-label" for="gridRadios3">
-                        4
-                        </label>
-                    </div>
-                </div>
 
-                <!-- FREEZER-->
-                <div class="col-2 mb-3">
-                    <label class="form-label text-primary mb-3">Freezer</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="freezer" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
+                    <!-- FREEZER-->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary mb-3">Freezer</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="freezer" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="freezer" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="freezer" id="gridRadios3" value="2">
+                            <label class="form-check-label" for="gridRadios3">
+                            2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="freezer" id="gridRadios3" value="3">
+                            <label class="form-check-label" for="gridRadios3">
+                            3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="freezer" id="gridRadios3" value="4">
+                            <label class="form-check-label" for="gridRadios3">
+                            4
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="freezer" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="freezer" id="gridRadios3" value="2">
-                        <label class="form-check-label" for="gridRadios3">
-                        2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="freezer" id="gridRadios3" value="3">
-                        <label class="form-check-label" for="gridRadios3">
-                        3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="freezer" id="gridRadios3" value="4">
-                        <label class="form-check-label" for="gridRadios3">
-                        4
-                        </label>
-                    </div>
-                </div>
 
-                <!-- MICRO-ONDAS-->
-                <div class="col-2 mb-3">
-                    <label class="form-label text-primary mb-3">Micro-ondas</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="microondas" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
+                    <!-- MICRO-ONDAS-->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary mb-3">Micro-ondas</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="microondas" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="microondas" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="microondas" id="gridRadios3" value="2">
+                            <label class="form-check-label" for="gridRadios3">
+                            2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="microondas" id="gridRadios3" value="3">
+                            <label class="form-check-label" for="gridRadios3">
+                            3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="microondas" id="gridRadios3" value="4">
+                            <label class="form-check-label" for="gridRadios3">
+                            4
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="microondas" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="microondas" id="gridRadios3" value="2">
-                        <label class="form-check-label" for="gridRadios3">
-                        2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="microondas" id="gridRadios3" value="3">
-                        <label class="form-check-label" for="gridRadios3">
-                        3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="microondas" id="gridRadios3" value="4">
-                        <label class="form-check-label" for="gridRadios3">
-                        4
-                        </label>
-                    </div>
-                </div>
 
-                <!-- LAVA-LOUCA-->
-                <div class="col-2 mb-3">
-                    <label class="form-label text-primary">Lava-louças</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="lavaloucas" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
+                    <!-- LAVA-LOUCA-->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary">Lava-louças</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lavaloucas" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lavaloucas" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lavaloucas" id="gridRadios3" value="2">
+                            <label class="form-check-label" for="gridRadios3">
+                            2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lavaloucas" id="gridRadios3" value="3">
+                            <label class="form-check-label" for="gridRadios3">
+                            3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lavaloucas" id="gridRadios3" value="4">
+                            <label class="form-check-label" for="gridRadios3">
+                            4
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="lavaloucas" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="lavaloucas" id="gridRadios3" value="2">
-                        <label class="form-check-label" for="gridRadios3">
-                        2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="lavaloucas" id="gridRadios3" value="3">
-                        <label class="form-check-label" for="gridRadios3">
-                        3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="lavaloucas" id="gridRadios3" value="4">
-                        <label class="form-check-label" for="gridRadios3">
-                        4
-                        </label>
-                    </div>
-                </div>
 
 
-                <!-- MÁQUINA DE LAVAR ROUPA -->
-                <div class="col-2 mb-3">
-                    <label class="form-label text-primary">Lava-Roupas</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="maquinaroupa" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
+                    <!-- MÁQUINA DE LAVAR ROUPA -->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary">Lava-Roupas</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="maquinaroupa" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="maquinaroupa" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="maquinaroupa" id="gridRadios3" value="2">
+                            <label class="form-check-label" for="gridRadios3">
+                            2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="maquinaroupa" id="gridRadios3" value="3">
+                            <label class="form-check-label" for="gridRadios3">
+                            3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="maquinaroupa" id="gridRadios3" value="4">
+                            <label class="form-check-label" for="gridRadios3">
+                            4
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="maquinaroupa" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="maquinaroupa" id="gridRadios3" value="2">
-                        <label class="form-check-label" for="gridRadios3">
-                        2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="maquinaroupa" id="gridRadios3" value="3">
-                        <label class="form-check-label" for="gridRadios3">
-                        3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="maquinaroupa" id="gridRadios3" value="4">
-                        <label class="form-check-label" for="gridRadios3">
-                        4
-                        </label>
-                    </div>
-                </div>
 
-                <!-- MÁQUINA DE SECAR ROUPA -->
-                <div class="col-2 mb-4">
-                    <label class="form-label text-primary">Seca-Roupas</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="secarroupas" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
+                    <!-- MÁQUINA DE SECAR ROUPA -->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary">Seca-Roupas</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="secarroupas" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="secarroupas" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="secarroupas" id="gridRadios3" value="2">
+                            <label class="form-check-label" for="gridRadios3">
+                            2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="secarroupas" id="gridRadios3" value="3">
+                            <label class="form-check-label" for="gridRadios3">
+                            3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="secarroupas" id="gridRadios3" value="4">
+                            <label class="form-check-label" for="gridRadios3">
+                            4
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="secarroupas" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="secarroupas" id="gridRadios3" value="2">
-                        <label class="form-check-label" for="gridRadios3">
-                        2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="secarroupas" id="gridRadios3" value="3">
-                        <label class="form-check-label" for="gridRadios3">
-                        3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="secarroupas" id="gridRadios3" value="4">
-                        <label class="form-check-label" for="gridRadios3">
-                        4
-                        </label>
-                    </div>
-                </div>
 
-                <!-- EMPREGADO -->
-                <div class="col-2 mb-3">
-                    <label class="form-label text-primary">Empregado(a)</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="empregado" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
+                    <!-- EMPREGADO -->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary">Empregado(a)</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="empregado" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="empregado" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="empregado" id="gridRadios3" value="2">
+                            <label class="form-check-label" for="gridRadios3">
+                            2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="empregado" id="gridRadios3" value="3">
+                            <label class="form-check-label" for="gridRadios3">
+                            3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="empregado" id="gridRadios3" value="4">
+                            <label class="form-check-label" for="gridRadios3">
+                            4
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="empregado" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="empregado" id="gridRadios3" value="2">
-                        <label class="form-check-label" for="gridRadios3">
-                        2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="empregado" id="gridRadios3" value="3">
-                        <label class="form-check-label" for="gridRadios3">
-                        3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="empregado" id="gridRadios3" value="4">
-                        <label class="form-check-label" for="gridRadios3">
-                        4
-                        </label>
-                    </div>
-                </div>
 
-                <!-- PC -->
-                <div class="col-1 mb-3">
-                    <label class="form-label text-primary">PC</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="computador" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
+                    <!-- PC -->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary">PC</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="computador" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="computador" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="computador" id="gridRadios3" value="2">
+                            <label class="form-check-label" for="gridRadios3">
+                            2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="computador" id="gridRadios3" value="3">
+                            <label class="form-check-label" for="gridRadios3">
+                            3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="computador" id="gridRadios3" value="4">
+                            <label class="form-check-label" for="gridRadios3">
+                            4
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="computador" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="computador" id="gridRadios3" value="2">
-                        <label class="form-check-label" for="gridRadios3">
-                        2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="computador" id="gridRadios3" value="3">
-                        <label class="form-check-label" for="gridRadios3">
-                        3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="computador" id="gridRadios3" value="4">
-                        <label class="form-check-label" for="gridRadios3">
-                        4
-                        </label>
-                    </div>
-                </div>
 
-                <!-- AGUA ENCANADA -->
-                <div class="col-2 mb-3">
-                    <label class="form-label text-primary">Agua Encanada</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="aguaencanada" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
+                    <!-- AGUA ENCANADA -->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary">Agua Encanada</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="aguaencanada" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="aguaencanada" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="aguaencanada" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                </div>
 
-                <!-- RUA PAVIMENTA -->
-                <div class="col-2 mb-3">
-                    <label class="form-label text-primary">Rua pavimentada</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ruapavi" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
+                    <!-- RUA PAVIMENTA -->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary">Rua pavimentada</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="ruapavi" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="ruapavi" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ruapavi" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                </div>
 
-                <!-- MOTOCICLETA -->
-                <div class="col-1 mb-3">
-                    <label class="form-label text-primary">Moto</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="moto" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
+                    <!-- MOTOCICLETA -->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary">Moto</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="moto" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="moto" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="moto" id="gridRadios3" value="2">
+                            <label class="form-check-label" for="gridRadios3">
+                            2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="moto" id="gridRadios3" value="3">
+                            <label class="form-check-label" for="gridRadios3">
+                            3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="moto" id="gridRadios3" value="4">
+                            <label class="form-check-label" for="gridRadios3">
+                            4
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="moto" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="moto" id="gridRadios3" value="2">
-                        <label class="form-check-label" for="gridRadios3">
-                        2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="moto" id="gridRadios3" value="3">
-                        <label class="form-check-label" for="gridRadios3">
-                        3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="moto" id="gridRadios3" value="4">
-                        <label class="form-check-label" for="gridRadios3">
-                        4
-                        </label>
-                    </div>
-                </div>
 
-                <!-- CARRO -->
-                <div class="col-1 mb-3">
-                    <label class="form-label text-primary">Carro</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="automovel" id="gridRadios1" value="0" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                        0
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="automovel" id="gridRadios2" value="1">
-                        <label class="form-check-label" for="gridRadios2">
-                        1
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="automovel" id="gridRadios3" value="2">
-                        <label class="form-check-label" for="gridRadios3">
-                        2
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="automovel" id="gridRadios3" value="3">
-                        <label class="form-check-label" for="gridRadios3">
-                        3
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="automovel" id="gridRadios3" value="4">
-                        <label class="form-check-label" for="gridRadios3">
-                        4
-                        </label>
+                    <!-- CARRO -->
+                    <div class="col-2 mb-3">
+                        <label class="form-label text-primary">Carro</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="automovel" id="gridRadios1" value="0" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                            0
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="automovel" id="gridRadios2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                            1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="automovel" id="gridRadios3" value="2">
+                            <label class="form-check-label" for="gridRadios3">
+                            2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="automovel" id="gridRadios3" value="3">
+                            <label class="form-check-label" for="gridRadios3">
+                            3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="automovel" id="gridRadios3" value="4">
+                            <label class="form-check-label" for="gridRadios3">
+                            4
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
