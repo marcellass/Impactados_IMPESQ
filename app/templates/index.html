@@ -1,0 +1,17 @@
+
+{% extends 'base.html'%} 
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col p-5">
+                {% if user %}
+                <h3>Bem vindo, {{ current_user.nome }}!</h3>
+                {% else%}
+                <h3>Bem vindo!</h3>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

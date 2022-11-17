@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+
+{% block content%}
+
+<div class="container-sm w-25 shadow p-3 mb-5 bg-body rounded mt-5">
+    <div class="container d-flex p-2 bd-highlight">
+            <div class="col d-flex justify-content-center">
+                <h2>Atualização Cadastral</h2>
+            </div>
+    </div>
+    
+    <form action="/atualizar/empresa" method="POST" name="atualizarEmpresa" class="p-3 mt-5">
+        {{ form.csrf_token }}
+        <div class="row row-cols-1 justify-content-center">
+            
+            <div class="col">
+                <div class="form-group m-4">
+                    <div class="form-group first">
+                        <label class="mb-2" for="nome">Nome da empresa:</label>
+                        {{ form.nome(class="form-control", 
+                        placeholder="Impactados LTDA", value= empresaAntiga.nome)}}
+                      </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group m-4">
+                    <label class="mb-2" for="email">Email</label>
+                    {{ form.email(class="form-control", 
+                    placeholder="responsavel@empresa.com", value=empresaAntiga.email)}}
+                  </div>
+            </div>
+            <div class="col">
+                <div class="form-group m-4">
+                    <label class="mb-2" for="cnpj">CNPJ</label>
+                    {{ form.cnpj(class="form-control", 
+                    placeholder="XX. XXX. XXX/0001-XX", value=empresaAntiga.cnpj)}}
+                  </div>
+                </div>
+            </div>
+          
+        </div>
+
+        </div>
+        <br>
+
+
+        <div class="row justify-content-md-center">
+            <div class="d-grid gap-2 col-2 mx-auto">
+                <button class="btn btn-outline-success" name="id" type="submit" value="{{empresaAntiga.id}}">Salvar Alterações</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}
