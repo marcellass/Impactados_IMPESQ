@@ -1,17 +1,56 @@
 
 {% extends 'base.html'%} 
 {% block content %}
-    <div class="container mt-5">
+    <div class="container mt-3">
         <div class="row">
             <div class="col p-5">
-                {% if user %}
                 <h3>Bem vindo, {{ current_user.nome }}!</h3>
-                {% else%}
-                <h3>Bem vindo!</h3>
-                {% endif %}
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row row-cols-3 justify-content-around ">
+            <div class="col-3 shadow p-2 mb-5 bg-body rounded justify-content-center ">
+                <div class="row ">
+                    <div class="col-12 text-center">
+                        <h3>Empresas</h3>
+                       
+                    </div>
+                    <div class="col p-2 text-center justify-content-center">
+
+                        <h2 class="fs-1 ">{{empresas}}</h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 shadow p-3 mb-5 bg-body rounded justify-content-center ">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3 class="">Pesquisas</h3>
+                       
+                    </div>
+                    <div class="col-12 p-2 text-center">
+                        
+                        <h3 class="fs-1">{{pesquisas}}</h3>
+
+                    </div>
+                </div>
+            </div><div class="col-3 shadow p-3 mb-5 bg-body rounded justify-content-center ">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>Convidados</h3>
+                       
+                    </div>
+                    <div class="col-12 p-2 text-center">
+                        
+                        <h3 class="fs-1">{{convidados}}</h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
 
 
 {% endblock %}

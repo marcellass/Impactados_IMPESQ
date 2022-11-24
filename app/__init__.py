@@ -19,6 +19,6 @@ loginManager.init_app(app)
 # mysql = MySQL()
 # mysql.init_app(app)
 
-from app.models import RecrutadorEntity, EmpresaEntity
-from app.models.models import login, cadastroRecrutador
+from app.models import RecrutadorEntity, EmpresaEntity, PesquisaEntity, ConvidadoEntity
+from app.models.models import login, cadastroRecrutador, PesquisaModel, EmpresaModel
 from app.controllers import default

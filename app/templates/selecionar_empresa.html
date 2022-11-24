@@ -5,16 +5,16 @@
 <div class="container shadow p-3 mb-5 bg-body rounded mt-5">
     <div class="container d-flex p-2 bd-highlight">
             <div class="col d-flex justify-content-center">
-                <h2 class="">Empresas</h2>
+                <h2 class="">Para qual empresa deseja criar essa pesquisa?</h2>
             </div>
     </div>
+
 
     <table class="table mt-5 table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
-            <th scope="col">Email</th>
             <th scope="col">CNPJ</th>
             <th scope="col">Ações</th>
           </tr>
@@ -25,9 +25,8 @@
                 
                 <th scope="row">{{empresa.id}}</th>
                 <td class="">{{empresa.nome}}</td>
-                <td>{{empresa.email}}</td>
                 <td>{{empresa.cnpj}}</td>
-                <td><form action="/atualizar/empresa" method="POST"><button class="btn btn-outline-warning" name="id" type="submit" value="{{empresa.id}}">Editar</button></form></td>
+                <td><form action="/cadastrar/pesquisa/{{empresa.id}}" method="POST"><button class="btn btn-outline-success" name="id" type="submit" value="{{empresa.id}}">Selecionar</button></form></td>
               </tr>
             </tbody>
         {% endfor %}

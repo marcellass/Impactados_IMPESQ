@@ -1,71 +1,57 @@
-<!DOCTYPE html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>IMPESQ</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow p-2 mb-5 rounded">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">IMPESQ</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <a class="nav-link " aria-current="page" href="#">Cadastro pesquisa</a>
-                  <a class="nav-link active" href="#">Pesquisas Cadastradas</a>
-                </div>
-              </div>
+{% extends 'base.html'%}
+
+{% block content%}
+
+<div class="container shadow p-3 mb-5 bg-body rounded mt-5">
+    <div class="container d-flex p-2 bd-highlight">
+            <div class="col d-flex justify-content-center">
+                <h2 class="">Pesquisas</h2>
             </div>
-          </nav>
+    </div>
 
 
-       {% for item in datas %}
-          <div id="user-contato" class="container shadow p-3 mb-5 bg-body rounded mt-3">
+    <table class="table mt-5 table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Empresa</th>
+            <th scope="col">Objeto da pesquisa</th>
+            <th scope="col">Tipo de objeto</th>
+            <th scope="col">Data e hora</th>
+            <th scope="col">Genero(s)</th>
+            <th scope="col">Faixa etaria</th>
+            <th scope="col">Classe economica</th>
+          </tr>
+        </thead>
+        
+          {%for pesquisa in pesquisas%}
+            <tbody>
+              <tr>
+                <th scope="row">{{pesquisa.id}}</th>
+                
+                {% for empresa in empresas %} 
+                 {% if empresa.id == pesquisa.idEmpresa %} 
+                  <th scope="row">{{empresa.nome}}</th>
+                  {% endif %}
+                {% endfor %}
+                
+                <td class="">{{pesquisa.objetoPesquisa}}</td>
+                <td>{{pesquisa.tipoObjeto}}</td>
+                <td>{{pesquisa.dataHoraPesquisa}}</td>
+                <td>{{pesquisa.generos}}</td>
+                <td>{{pesquisa.faixaEtaria}}</td>
+                <td>{{pesquisa.classeEconomica}}</td>
             
-            <div class="row bg-primary text-light p-3 rounded">
-              <div class="col mb-2">
-                <h3>
-                  Pesquisa: {{item[0]}} 
-                </h3>
-              </div>
-            </div>
-            <div class="row row-cols-3 p-5">
-                  <div class="col-3 mb-3 bg-light rounded shadow">
-                      <label class="form-label">Nome da Empresa:</label>
-                      <label class="form-label">{{item[0]}}</label>
-                  </div>
-                  <div class="col-3 mb-3 bg-light rounded shadow">
-                    <label class="form-label">CNPJ/CPF:</label>
-                    <label class="form-label">{{item[1]}}</label>
-                  </div>  
-                  <div class="col-3 mb-3 bg-light rounded shadow">
-                    <label class="form-label">Objeto da Pesquisa:</label>
-                    <label class="form-label">{{item[2]}}</label>
-                  </div>
-                  <div class="col-3 mb-3 bg-light rounded shadow">
-                    <label class="form-label">Tipo de objeto:</label>
-                    <label class="form-label">{{item[3]}}</label>
-                  </div>
-                  <div class="col-3 mb-3 bg-light rounded shadow">
-                    <label class="form-label">Data e Horário da Pesquisa:</label>
-                    <label class="form-label">{{item[4]}}</label>
-                </div>
-                <div class="col-3 mb-3 bg-light rounded shadow">
-                  <label class="form-label">Gênero dos Convidados:</label>
-                  <label class="form-label">{{item[5]}}</label>
-                </div> 
-                <div class="col-3 mb-3 bg-light rounded shadow">
-                  <label class="form-label">Faixa etária dos convidados:</label>
-                  <label class="form-label">{{item[6]}}</label>
-                </div>
-                <div class="col-3 mb-3 bg-light rounded shadow">
-                  <label class="form-label">Classificação socio-econômica:</label>
-                  <label class="form-label">{{item[7]}}</label>
-                </div>
+               </tr>
+            </tbody>
             {% endfor %}
-    </body>
-  </html>
+      
+      </table>
+     
+      
+
+
+</div>
+
+
+{% endblock %}

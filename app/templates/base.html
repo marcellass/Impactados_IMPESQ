@@ -1,6 +1,6 @@
 {% block menu %}
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,10 +26,22 @@
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Pesquisa</a>
-                </li>
                 
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('home')}}">Home</a>
+                </li>
+
+              <div class="dropdown bg-dark">
+                <a class=" bg-dark text-light dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Pesquisas
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item " href="{{url_for('selecionarEmpresa')}}">Criar pesquisa</a></li>
+                  <li><a class="dropdown-item" href="{{url_for('listarPesquisas')}}">Todas pesquisas</a></li>
+                
+                </ul>
+              </div>
+              
                 <div class="dropdown bg-dark">
                   <a class=" bg-dark text-light dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Empresas
@@ -42,9 +54,17 @@
                 </div>
                 
                   
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Convidado</a>
-                  </li>
+                <div class="dropdown bg-dark">
+                <a class=" bg-dark text-light dropdown-toggle nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Convidados
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item " href="{{url_for('convidado')}}">Cadastrar convidado</a></li>
+                  <li><a class="dropdown-item" href="{{url_for('listarConvidado')}}">Todos convidados</a></li>
+                
+                </ul>
+              </div>
+                
                   {% if current_user.is_authenticated %}
                     <li class="nav-item">
                       <a class="nav-link" href="{{url_for('logout')}}">Sair</a>
