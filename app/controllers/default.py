@@ -211,10 +211,10 @@ def convidado():
 @app.route("/listar/convidado", methods=["GET","POST"])
 def listarConvidado():
     convidados = Convidado.query.filter_by().all()
-
-    if request.method == "POST":
-        form = request.form("filtro_participou")
-        convidados = Convidado.query.filter_by(ja_participou=form).all()
+    if request.method == 'POST':
+        participacao = request.form['paticipacao']
+        convidados = Convidado.query.filter_by(ja_participou=participacao).all()
+   
 
     return render_template('listar_convidado.html', convidados=convidados)
 
