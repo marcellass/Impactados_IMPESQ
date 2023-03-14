@@ -35,7 +35,7 @@ class Pesquisa(db.Model):
     # como a classe apresenta os registros
     def __repr__(self):
         pesquisas = [self.id, self.idEmpresa, self.objetoPesquisa, self.tipoObjeto, self.dataHoraPesquisa, self.generos, self.faixaEtaria, self.classeEconomica]
-
+        
         return "%r" % pesquisas
 
 

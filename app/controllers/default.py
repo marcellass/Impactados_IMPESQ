@@ -10,6 +10,12 @@ from app.models.models.PesquisaModel import CadastroPesquisaModel
 from app.models.PesquisaEntity import Pesquisa
 from app.models.ConvidadoEntity import Convidado
 from app.controllers.utils.utils import calculaCriterio
+from app.controllers.utils import charts
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
+
 
 @loginManager.user_loader
 def load_user(id):
@@ -58,7 +64,19 @@ def home():
     convidados = Convidado.query.filter_by().all()
     convidados = len(convidados)
 
-    return render_template('index.html', pesquisas=pesquisas, empresas=empresas, convidados=convidados)
+    servicos = Pesquisa.query.filter_by(tipoObjeto="servico").all()
+    servicos = len(servicos) 
+    
+    produtos = Pesquisa.query.filter_by(tipoObjeto="produto").all()
+    produtos = len(produtos)  
+    
+    tipos_de_pesquisa = ['Produto', 'Serviço']
+    total_de_pesquisas = [produtos, servicos]
+
+    ages = ['0 -18', '18-35', '35-70']
+    idades = charts.faixaEtariaChart()
+
+    return render_template('index.html', pesquisas=pesquisas, empresas=empresas, convidados=convidados, tipos_de_pesquisa=tipos_de_pesquisa, total_de_pesquisas=total_de_pesquisas, ages=ages, idades=idades)
 
 @app.route("/logout")
 def logout():

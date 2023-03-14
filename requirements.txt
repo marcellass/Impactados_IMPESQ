@@ -4,3 +4,5 @@ flask-wtf
 flask_migrate
 flask_login
 migrations
+matplotlib
+numpy
