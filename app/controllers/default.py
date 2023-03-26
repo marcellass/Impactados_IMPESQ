@@ -21,10 +21,6 @@ import os
 def load_user(id):
     return Recutrador.query.filter_by(id=id).first()
 
-@app.route('/react')
-def react():
-    return app.send_static_file('react-app/index.html')
-
 @app.route("/cadastrar", methods=["GET","POST"])
 def cadastrar():
     form = CadastroRecrutadorForm()
@@ -80,7 +76,7 @@ def home():
     ages = ['0 -18', '18-35', '35-70']
     idades = charts.faixaEtariaChart()
 
-    return render_template('index.html', pesquisas=pesquisas, empresas=empresas, convidados=convidados, tipos_de_pesquisa=tipos_de_pesquisa, total_de_pesquisas=total_de_pesquisas, ages=ages, idades=idades)
+    return render_template('home.html', pesquisas=pesquisas, empresas=empresas, convidados=convidados, tipos_de_pesquisa=tipos_de_pesquisa, total_de_pesquisas=total_de_pesquisas, ages=ages, idades=idades)
 
 @app.route("/logout")
 def logout():

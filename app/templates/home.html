@@ -1,0 +1,132 @@
+{% extends 'base.html'%} 
+{% block content %}
+    <div class="container mt-1">
+        <div class="row">
+            <div class="col p-3">
+                <h3>Bem vindo, {{ current_user.nome}}!</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row row-cols-3 justify-content-around ">
+            <div class="col-3 shadow p-2 mb-5 bg-body rounded justify-content-center ">
+                <div class="row ">
+                    <div class="col-12 text-center">
+                        <h3>Empresas</h3>
+                    
+                    </div>
+                    <div class="col p-2 text-center justify-content-center">
+
+                        <h2 class="fs-1 ">{{empresas}}</h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 shadow p-3 mb-5 bg-body rounded justify-content-center ">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3 class="">Pesquisas</h3>
+                    
+                    </div>
+                    <div class="col-12 p-2 text-center">
+                        
+                        <h3 class="fs-1">{{pesquisas}}</h3>
+
+                    </div>
+                </div>
+            </div><div class="col-3 shadow p-3 mb-5 bg-body rounded justify-content-center ">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>Convidados</h3>
+                    
+                    </div>
+                    <div class="col-12 p-2 text-center">
+                        
+                        <h3 class="fs-1">{{convidados}}</h3>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row text-center justify-content-around  shadow p-2 mb-5 bg-body rounded justify-content-center">
+                <div class="col-12 ">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>Tipos de pesquisas cadastradas</h3>
+                        </div>
+                    </div>
+                <div>
+                    <figure id="figure-chart-pesquisas" class="figure">
+                    <div id="pie-chart-pesquisas"  class="chart-container">
+                        <canvas id="pie-chart"></canvas>
+                    </div>
+                    </figure>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+                <script>
+                    var tiposDePesquisa = {{ tipos_de_pesquisa|tojson }};
+                    var totalDePesquisas = {{ total_de_pesquisas|tojson }};
+                    var pieChart = document.getElementById('pie-chart').getContext('2d');
+                    var chart = new Chart(pieChart, {
+                    type: 'pie',
+                    data: {
+                        labels: tiposDePesquisa,
+                        datasets: [{
+                        data: totalDePesquisas,
+                        backgroundColor: ['#FF6384', '#36A2EB']
+                        }]
+                    },
+                    options: {
+                        responsive: true
+                    }
+                    });
+                </script>
+                </div>
+            </div>
+            <div class="row text-center justify-content-around  shadow p-2 mb-5 bg-body rounded justify-content-center">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>Idades mais utilizadas</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <figure id="figure-chart-ages"class="figure">
+                        <div id="chart-container-ages" class="chart-container">
+                            <canvas id="pie-chart-ages"></canvas>
+                        </div>
+                        </figure>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+                    <script>
+                        var ages = {{ ages|tojson }};
+                        var idades = {{ idades|tojson }};
+                        var pieChartAges = document.getElementById('pie-chart-ages').getContext('2d');
+                        var chartAges = new Chart(pieChartAges, {
+                        type: 'pie',
+                        data: {
+                            labels: ages,
+                            datasets: [{
+                            data: idades,
+                            backgroundColor: ['#FF6384', '#36A2EB', '#ebae34']
+                            }]
+                        },
+                        options: {
+                            responsive: true
+                        }
+                        });
+                    </script>
+                    </div>
+                </div>  
+            </div> 
+            
+        </div>
+        
+            
+            
+    </div>  
+
+
+{% endblock %}
