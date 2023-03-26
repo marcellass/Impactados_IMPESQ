@@ -1,5 +1,5 @@
 from app import app, db, loginManager
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, send_from_directory
 from app.models.RecrutadorEntity import Recutrador
 from app.models.models.login import LoginForm
 from app.models.models.cadastroRecrutador import CadastroRecrutadorForm
@@ -20,6 +20,10 @@ import os
 @loginManager.user_loader
 def load_user(id):
     return Recutrador.query.filter_by(id=id).first()
+
+@app.route('/react')
+def react():
+    return app.send_static_file('react-app/index.html')
 
 @app.route("/cadastrar", methods=["GET","POST"])
 def cadastrar():

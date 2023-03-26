@@ -6,3 +6,4 @@ flask_login
 migrations
 matplotlib
 numpy
+Flask-React
