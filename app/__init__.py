@@ -21,5 +21,5 @@ loginManager.init_app(app)
 
 from app.models import RecrutadorEntity, EmpresaEntity, PesquisaEntity, ConvidadoEntity
 from app.models.models import login, cadastroRecrutador, PesquisaModel, EmpresaModel
-from app.controllers import default, reactBackEnd
+from app.controllers import EmpresaController, default, reactBackEnd, ConvidadoController, PesquisaController
 

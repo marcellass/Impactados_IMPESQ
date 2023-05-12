@@ -2,6 +2,43 @@
 
 {% block content%}
 
+<div class="container p-2 mt-3">
+  <form action="/listar/pesquisas" method="GET">
+    <div class="row mb-3">
+      <div class="col-2">
+          <label for="exampleInputEmail1" class="form-label">Empresa</label>
+          <input type="text" class="form-control" id="empresa" name="empresa" placeholder="ex: Impacta LTDA">
+      </div>
+      <div class="col-4">
+       
+          <label for="exampleInputEmail1" class="form-label">Objeto em Pesquisa</label>
+          <input type="text" class="form-control" id="objetoPesquisa" name="objetoPesquisa" placeholder="ex: Curso ADS">
+      </div>
+      <div class="col-2">
+
+        <label for="exampleInputEmail1" class="form-label">Tipo de Objeto</label>
+        <select class="form-select" id="tipoObjeto" name="tipoObjeto">
+          <option for="filtro" none></option>
+          <option value="todos" for="filtro">todos</option>
+          <option value="servico" for="filtro">servico</option>
+          <option value="produto" for="filtro">produto</option>
+          
+        </select>
+      
+      </div>
+      <div class="col-3">
+        <label for="exampleInputEmail1" class="form-label">Classificação Socio-econômica</label>
+        <input type="text" class="form-control" id="classeEconomica" name="classeEconomica" placeholder="ex: A, B, AB ...">
+      </div>
+      
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-2">
+        <button class="btn btn-outline-info" type="submit">Filtrar</button>
+      </div>
+   </div>
+  </form>
+</div>
 <div class="container shadow p-3 mb-5 bg-body rounded mt-5">
     <div class="container d-flex p-2 bd-highlight">
             <div class="col d-flex justify-content-center">

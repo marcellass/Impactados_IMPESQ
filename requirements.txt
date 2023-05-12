@@ -6,4 +6,5 @@ flask_login
 migrations
 matplotlib
 numpy
-Flask-React
+reportlab
+flask-dance
