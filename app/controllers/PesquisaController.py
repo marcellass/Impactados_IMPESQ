@@ -8,12 +8,10 @@ from app.models.EmpresaEntity import Empresa
 from app.models.models.PesquisaModel import CadastroPesquisaModel
 from app.models.PesquisaEntity import Pesquisa
 from app.models.ConvidadoEntity import Convidado
-from app.controllers.utils import charts
-import matplotlib.pyplot as plt
-import numpy as np
-import os
 
 
+if __name__ == '__main__':
+    app.run()
 
 @app.route("/selecionar/empresa", methods=["GET","POST"])
 def selecionarEmpresa():
@@ -37,7 +35,8 @@ def cadastrarPesquisa(idEmpresa):
         classeEconomica=form.classeEconomica.data, faixaEtaria=form.faixaEtaria.data)
         db.session.add(pesquisa)
         db.session.commit()
-        return redirect(url_for('listarPesquisas'))
+        idPesquisa = pesquisa.id
+        return redirect(url_for('novoFormulario', idEmpresa=idEmpresa, idPesquisa=idPesquisa))
     else:
          print(form.errors)
     return render_template('cadastro_pesquisa.html', form=form, idEmpresa=idEmpresa)

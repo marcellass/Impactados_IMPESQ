@@ -14,6 +14,6 @@ class CadastroPesquisaModel(FlaskForm):
    
    
     faixaEtaria = RadioField("faixaEtaria",choices=[('0-18','0 - 18'),('18-35','18 - 35'),('35-70','35 - 70')], validators=[DataRequired()])
-    classeEconomica = SelectField("classeEconomica", choices=[('A', 'A'),('B', 'B'),('C', 'C'),('D', 'D'),('E', 'E')], validators=[DataRequired()])
+    classeEconomica = SelectField("classeEconomica", choices=[('A', 'A'),('B1', 'B1'),('B2', 'B2'),('C1', 'C1'),('C2', 'C2'),('DE', 'DE')], validators=[DataRequired()])
     
 

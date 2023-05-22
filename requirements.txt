@@ -8,3 +8,4 @@ matplotlib
 numpy
 reportlab
 flask-dance
+flask_script

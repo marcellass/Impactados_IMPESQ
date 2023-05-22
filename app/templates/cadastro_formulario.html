@@ -1,0 +1,135 @@
+{% extends 'base.html'%} 
+{% block content %}
+<div class="container shadow bg-body rounded mt-5 w-50 p-5">
+    <h1>Formulário de Perguntas</h1>
+    <form id="perguntasForm">
+        <div id="perguntasContainer">
+            <div class="form-group">
+                <label>Pergunta 1</label>
+                <div class="input-group">
+                    <input type="text" class="form-control pergunta-input" name="perguntas[]" required>
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-danger btn-remover-pergunta">Remover</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+                <button type="button" class="btn btn-primary mb-3" id="adicionarPerguntaBtn">Adicionar Nova Pergunta</button>
+            </div>
+            <div class="col-6 text-right">
+                <button type="submit" class="btn btn-success" id="salvarContinuarBtn" disabled>Salvar e Continuar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Função para adicionar um novo campo de pergunta
+    function adicionarPergunta() {
+        var perguntasContainer = document.getElementById('perguntasContainer');
+        var contadorPerguntas = perguntasContainer.getElementsByClassName('form-group').length + 1;
+
+        var divFormGroup = document.createElement('div');
+        divFormGroup.classList.add('form-group');
+
+        var labelPergunta = document.createElement('label');
+        labelPergunta.textContent = 'Pergunta ' + contadorPerguntas;
+
+        var divInputGroup = document.createElement('div');
+        divInputGroup.classList.add('input-group');
+
+        var inputPergunta = document.createElement('input');
+        inputPergunta.type = 'text';
+        inputPergunta.classList.add('form-control', 'pergunta-input');
+        inputPergunta.name = 'perguntas[]';
+        inputPergunta.required = true;
+
+        var divInputGroupAppend = document.createElement('div');
+        divInputGroupAppend.classList.add('input-group-append');
+
+        var btnRemoverPergunta = document.createElement('button');
+        btnRemoverPergunta.type = 'button';
+        btnRemoverPergunta.classList.add('btn', 'btn-danger', 'btn-remover-pergunta');
+        btnRemoverPergunta.textContent = 'Remover';
+
+        divInputGroupAppend.appendChild(btnRemoverPergunta);
+        divInputGroup.appendChild(inputPergunta);
+        divInputGroup.appendChild(divInputGroupAppend);
+        divFormGroup.appendChild(labelPergunta);
+        divFormGroup.appendChild(divInputGroup);
+        perguntasContainer.appendChild(divFormGroup);
+
+        // Adicionar evento de clique ao botão "Remover"
+        btnRemoverPergunta.addEventListener('click', function() {
+            divFormGroup.remove();
+        });
+
+        // Habilitar o botão "Salvar e Continuar" se houver pelo menos uma pergunta preenchida
+        if (document.getElementsByClassName('pergunta-input').length > 0) {
+            document.getElementById('salvarContinuarBtn').disabled = false;
+        }
+    }
+
+    // Adicionar evento de clique ao botão "Adicionar Nova Pergunta"
+    document.getElementById('adicionarPerguntaBtn').addEventListener('click', adicionarPergunta);
+
+    // Enviar formulário para o endpoint em Python Flask
+    document.getElementById('perguntasForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var perguntasInputs = document.getElementsByClassName('pergunta-input');
+        var perguntas = [];
+
+        for (var i = 0; i < perguntasInputs.length; i++) {
+            perguntas.push(perguntasInputs[i].value);
+        }
+
+        // Obter o caminho da URL
+        const path = window.location.pathname;
+
+        // Extrair os IDs da empresa e da pesquisa do caminho da URL
+        const regex = /\/cadastrar\/formulario\/(\d+)\/(\d+)/;
+        const matches = path.match(regex);
+
+        if (matches) {
+        const idEmpresa = matches[1];
+        const idPesquisa = matches[2];
+
+        // Criar objeto com os dados das perguntas, incluindo idEmpresa e idPesquisa
+        const data = {
+            idEmpresa: idEmpresa,
+            idPesquisa: idPesquisa,
+            perguntas: perguntas
+        };
+
+        // Enviar solicitação POST para o endpoint em Python Flask
+        fetch(`/cadastrar/formulario/${idEmpresa}/${idPesquisa}`, {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.text())
+            .then(result => {
+             const formularioId = result.formulario_id;  // Obter o ID do formulário do JSON
+            window.location.href = `/conclusao/formulario/${idEmpresa}/${idPesquisa}`;  // Redirecionar o usuário para a rota 'conclusaoFormulario'
+            })
+            .catch(error => {
+            console.error('Erro:', error);
+            });
+
+        } else {
+        console.error('Erro ao extrair IDs da empresa e pesquisa da URL.');
+        }
+
+    });
+
+    // Verificar se o formulário tem pelo menos uma pergunta preenchida para habilitar o botão "Salvar e Continuar"
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('adicionarPerguntaBtn').click();
+    });
+</script>
+{% endblock %}

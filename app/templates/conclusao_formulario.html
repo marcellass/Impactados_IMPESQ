@@ -1,0 +1,78 @@
+{% extends 'base.html'%} 
+{% block content %}
+
+<div class="container mt-5 d-flex justify-content-center align-items-center">
+    <div class="col-3 shadow p-3 mb-2 bg-body rounded">
+        <div class="flex-row-reverse">
+            <div class="col-12 text-center">
+                <p class="h5">Total de convidados nessa pesquisa</p>
+            </div>
+            <div class="col-12 p-2 text-center">
+                <h3 class="fs-1">{{convidados}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container shadow bg-body rounded mt-5 w-50 p-5">
+    <div class="row">
+
+    <div class="col-12 mb-2 ">
+        <p class="text-center h3">
+            {{pesquisa.objetoPesquisa}}
+        </p>
+    </div>
+        <div class="col-6">
+            <p>Empresa: {{empresa.nome}}</p>
+        </div>
+        <div class="col-6 text-end">
+            <p>CNPJ: {{empresa.cnpj}}</p>
+        </div>
+        <div class="col-6 mt-2">
+            <p>Classificação: {{pesquisa.classeEconomica}}</p>
+        </div>
+        <div class="col-6 mt-2 text-end">
+            <p>Faixa etaria: {{pesquisa.faixaEtaria}}</p>
+        </div>
+    
+    
+    {% for pergunta in perguntas %}
+    <div class="col-12 mt-3">
+        <div class="form-floating mb-3">
+            <input class="form-control" placeholder="Leave a comment here" id="floatinginputDisabled" disabled></input>
+            <label for="floatinginputDisabled">  {{ pergunta.pergunta }}</label>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="col-12">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-light me-md-2" type="button">Adicionar Convidados</button>
+            
+            
+            <button type="button" class="btn btn-outline-info">
+                <a href="{{ url_for('downloadPerguntas', idEmpresa=idEmpresa, idPesquisa=idPesquisa) }}" class=" btn link-dark ">
+                    Download Pesquisa
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                    </svg> 
+                </a>
+            </button>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}
+
+<h1>Sucesso</h1>
+<ul>
+    {% for pergunta in perguntas %}
+        <li>{{ pergunta.pergunta }}</li>
+    {% endfor %}
+</ul>
+<a class="link-primary" href="{{ url_for('downloadPerguntas', idEmpresa=idEmpresa, idPesquisa=idPesquisa) }}">Download do PDF</a>
+            
+<a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 25, 135, 84;" href="{{ url_for('downloadPerguntas', idEmpresa=idEmpresa, idPesquisa=idPesquisa) }}"">
+    Icon link
+    <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+  </a>
