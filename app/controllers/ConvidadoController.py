@@ -27,7 +27,7 @@ def listarConvidado():
 
     convidados = query.all()
    
-    return render_template('listar_convidado.html', convidados)
+    return render_template('listar_convidado.html', convidados=convidados)
 
 
 

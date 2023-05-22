@@ -78,18 +78,26 @@ def downloadPerguntas(idEmpresa, idPesquisa):
     # Criar o documento PDF
     c = canvas.Canvas(pdf_path, pagesize=A4)
 
-    # Definir o cabeçalho
+    
     c.setFont('Helvetica-Bold', 16)
-    c.drawString(200, 800, '{}'.format(pesquisa.objetoPesquisa))
+    c.drawString(250, 800, '{}'.format("IMPESQ"))
     c.setFont('Helvetica-Bold', 12)
-    c.drawString(50, 750, 'Empresa: {}'.format(empresa.nome))
-    c.drawString(200, 750, 'CNPJ: {}'.format(empresa.cnpj))
+    c.drawString(175, 780, '{}'.format("Transformando Opiniões em Dados"))
+    
+    c.setFont('Helvetica', 11)
+    c.drawString(50, 730, 'Empresa: {}'.format(empresa.nome))
+    c.drawString(380, 730, 'CNPJ: {}'.format(empresa.cnpj))
+    c.drawString(50, 700, 'Classificação : {}'.format(pesquisa.classeEconomica))
+    c.drawString(380, 700, 'Faixa etária: {}'.format(pesquisa.faixaEtaria))
 
 
-    c.setFont('Helvetica', 12)
+    c.setFont('Helvetica-Bold', 11)
+    c.drawString(50, 660, '{}'.format("Responda as seguintes questões sobre o objeto em pesquisa: {}.".format(pesquisa.objetoPesquisa)))
+
+    c.setFont('Helvetica', 11)
 
     # Escrever as perguntas no arquivo PDF
-    y = 700  # Posição vertical inicial
+    y = 630  # Posição vertical inicial
     numero_pergunta = 1
     for pergunta in perguntas:
         c.drawString(50, y, '{}. {}'.format(numero_pergunta, pergunta.pergunta))
@@ -97,7 +105,7 @@ def downloadPerguntas(idEmpresa, idPesquisa):
 
         # Espaço para o usuário responder
         y -= 15
-        c.drawString(50, y, 'Resposta: ________________________________________________')
+        c.drawString(50, y, 'Resposta: __________________________________________________________________________')
 
         y -= 20  # Decrementar a posição vertical
         numero_pergunta += 1
