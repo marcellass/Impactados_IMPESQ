@@ -58,6 +58,7 @@
             <th scope="col">Genero(s)</th>
             <th scope="col">Faixa etaria</th>
             <th scope="col">Classe economica</th>
+            <th scope="col">Formulários</th>
           </tr>
         </thead>
         
@@ -78,6 +79,8 @@
                 <td>{{pesquisa.generos}}</td>
                 <td>{{pesquisa.faixaEtaria}}</td>
                 <td>{{pesquisa.classeEconomica}}</td>
+                <td><form action="/formulario/elegibilidade/edicao" method="POST"><button class="btn btn-outline-warning" name="id" type="submit" value="{{pesquisa.id}}">Editar</button></form></td>
+              
             
                </tr>
             </tbody>

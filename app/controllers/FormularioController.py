@@ -1,6 +1,6 @@
 from app import app, db, loginManager
 import os
-from flask import render_template, flash, current_app, url_for, request, send_from_directory, jsonify, send_file
+from flask import render_template, flash, current_app, url_for, request, send_from_directory, jsonify, send_file,redirect
 from app.models.RecrutadorEntity import Recutrador
 from app.models.models.login import LoginForm
 from app.models.models.cadastroRecrutador import CadastroRecrutadorForm
@@ -12,6 +12,22 @@ from app.models.FormularioEntity import FormularioEntity
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
 
+
+@app.route("/formulario/elegibilidade/edicao", methods=["GET","POST"])
+def elegibilidadeEdicao():
+    idPesquisa = request.form['id']
+
+    queryPesquisa = Pesquisa.query.filter_by(id=idPesquisa).first()
+    queryFormulario = FormularioEntity.query.filter_by(pesquisa_id=idPesquisa).all()
+    lenFormulario = len(queryFormulario)
+
+    print(queryPesquisa)
+
+    if (lenFormulario == 0):
+        return redirect(url_for('novoFormulario', idEmpresa = queryPesquisa.idEmpresa , idPesquisa=idPesquisa))
+    else:
+        return redirect(url_for('conclusaoFormulario', idEmpresa = queryPesquisa.idEmpresa , idPesquisa=idPesquisa))
+    
 
 
 @app.route('/cadastrar/formulario/<int:idEmpresa>/<int:idPesquisa>', methods=["GET", "POST"])
@@ -55,10 +71,8 @@ def downloadPerguntas(idEmpresa, idPesquisa):
     pesquisa = Pesquisa.query.filter_by(id=idPesquisa).first()
     perguntas = FormularioEntity.query.filter_by(empresa_id=idEmpresa, pesquisa_id=idPesquisa).all()
 
-    # Obter o diretório estático do Flask
     static_dir = current_app.static_folder
 
-    # Criar o caminho completo para o arquivo PDF dentro do diretório estático
     pdf_path = os.path.join(static_dir, 'perguntas.pdf')
 
     # Criar o documento PDF

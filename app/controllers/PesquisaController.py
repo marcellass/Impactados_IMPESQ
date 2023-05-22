@@ -10,9 +10,6 @@ from app.models.PesquisaEntity import Pesquisa
 from app.models.ConvidadoEntity import Convidado
 
 
-if __name__ == '__main__':
-    app.run()
-
 @app.route("/selecionar/empresa", methods=["GET","POST"])
 def selecionarEmpresa():
     empresas = Empresa.query.filter_by().all()
